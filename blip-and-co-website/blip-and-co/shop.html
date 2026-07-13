@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sticker Shop — Blip & Co.</title>
+<meta name="description" content="Shop official Blip & Co. character stickers. New designs added regularly — add to cart and check out right here.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <nav class="nav-pill">
+      <a href="index.html" class="brand"><span class="blob" id="brandBlob"></span> Blip & Co.</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="videos.html">Videos</a></li>
+        <li><a href="shop.html" class="active">Sticker Shop</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="updates.html">Updates</a></li>
+      </ul>
+      <div style="display:flex; align-items:center; gap:10px;">
+        <a href="cart.html" class="nav-cart" aria-label="Cart"><span class="icon-cart-slot"></span><span class="cart-count">0</span></a>
+        <button class="nav-toggle" aria-label="Menu"></button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow">🧷 die-cut & vinyl</span>
+      <h1>The <span style="color:var(--pink)">sticker</span> shop.</h1>
+      <p>Waterproof vinyl, 3 in average size, printed in small batches. Once a design sells out it's gone until the next print run — so don't overthink it too hard.</p>
+    </div>
+  </section>
+
+  <section style="padding:20px 0 40px;">
+    <div class="container">
+      <div class="filter-bar">
+        <div class="filter-group" id="categoryFilters">
+          <button class="chip-btn active" data-cat="all">All</button>
+          <button class="chip-btn" data-cat="blip">Blip</button>
+          <button class="chip-btn" data-cat="doodle">Doodle</button>
+          <button class="chip-btn" data-cat="nib">Nib</button>
+          <button class="chip-btn" data-cat="duo">Duo</button>
+          <button class="chip-btn" data-cat="seasonal">Seasonal</button>
+        </div>
+        <select class="chip-btn" id="sortSelect" aria-label="Sort stickers">
+          <option value="newest">Sort: Newest</option>
+          <option value="priceLow">Sort: Price (low → high)</option>
+          <option value="priceHigh">Sort: Price (high → low)</option>
+        </select>
+      </div>
+
+      <div class="grid-4" id="stickerGrid"></div>
+      <p id="emptyMsg" style="display:none; text-align:center; color:var(--ink-soft); padding:40px 0;">No stickers in this category yet — new designs coming soon!</p>
+    </div>
+  </section>
+
+  <section id="bundles">
+    <div class="container">
+      <div id="bundleWrap"></div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer" id="footer"></footer>
+
+<script src="js/data.js"></script>
+<script src="js/supabase-config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/store.js"></script>
+<script src="js/main.js"></script>
+<script src="js/footer.js"></script>
+<script>
+  document.getElementById("brandBlob").innerHTML = heroBlip();
+
+  let currentCat = "all";
+  let currentSort = "newest";
+
+  function stickerCardHTML(s){
+    const outOfStock = s.stock === 0;
+    const lowStock = s.stock > 0 && s.stock <= 15;
+    return `
+      <div class="sticker-card shop-card">
+        ${s.isNew ? `<span class="tag tag-new">NEW RELEASE</span>` : (outOfStock ? `<span class="tag" style="background:var(--ink); color:#fff;">SOLD OUT</span>` : "")}
+        <div class="sticker-thumb" style="${outOfStock ? 'opacity:.45' : ''}">${mediaFor(s, stickerArt(s.art))}</div>
+        <h3>${s.name}</h3>
+        <p class="desc">${s.description}</p>
+        <div class="row">
+          <span class="price-tag">${fmtPrice(s.price)}</span>
+          <button class="btn btn-sm ${outOfStock ? '' : 'btn-primary'}" ${outOfStock ? 'disabled' : ''} data-add="${s.id}">
+            ${outOfStock ? 'Sold out' : 'Add to cart'}
+          </button>
+        </div>
+        ${lowStock ? `<div class="stock-note">Only ${s.stock} left</div>` : ""}
+      </div>`;
+  }
+
+  function renderStickers(){
+    let list = [...STICKERS];
+    if(currentCat !== "all") list = list.filter(s => s.category === currentCat);
+    if(currentSort === "priceLow") list.sort((a,b)=>a.price-b.price);
+    else if(currentSort === "priceHigh") list.sort((a,b)=>b.price-a.price);
+    else list.sort((a,b)=> (b.isNew - a.isNew));
+
+    const grid = document.getElementById("stickerGrid");
+    document.getElementById("emptyMsg").style.display = list.length ? "none" : "block";
+    grid.innerHTML = list.map(stickerCardHTML).join("");
+  }
+
+  function renderBundles(){
+    if(!BUNDLES.length){ document.getElementById("bundleWrap").innerHTML = ""; return; }
+    document.getElementById("bundleWrap").innerHTML = BUNDLES.map(b => {
+      const included = b.items.map(id => STICKERS.find(s => s.id === id)).filter(Boolean);
+      return `
+      <div class="bundle-banner">
+        <div style="display:flex; align-items:center; gap:18px; flex-wrap:wrap;">
+          <div style="display:flex;">
+            ${included.map((s,i) => `<div style="width:64px;height:64px;background:#3A2A63;border-radius:14px;border:3px solid #fff; margin-left:${i? '-16px':'0'}; padding:8px;">${stickerArt(s.art)}</div>`).join("")}
+          </div>
+          <div>
+            <span class="eyebrow" style="background:var(--mint); border-color:var(--mint);">📦 bundle & save</span>
+            <h3>${b.name}</h3>
+            <p>${b.description}</p>
+          </div>
+        </div>
+        <div style="text-align:right;">
+          <div class="price-tag" style="font-size:20px; margin-bottom:10px;">${fmtPrice(b.price)}</div>
+          <button class="btn btn-mint" data-add="${b.id}">Add bundle to cart</button>
+        </div>
+      </div>`;
+    }).join("");
+  }
+
+  document.getElementById("categoryFilters").addEventListener("click", e => {
+    const btn = e.target.closest("[data-cat]");
+    if(!btn) return;
+    document.querySelectorAll("#categoryFilters .chip-btn").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    currentCat = btn.dataset.cat;
+    renderStickers();
+  });
+  document.getElementById("sortSelect").addEventListener("change", e => {
+    currentSort = e.target.value;
+    renderStickers();
+  });
+  document.addEventListener("click", e => {
+    const btn = e.target.closest("[data-add]");
+    if(!btn) return;
+    addToCart(btn.dataset.add, 1, btn);
+  });
+
+  renderStickers();
+  renderBundles();
+  onStoreUpdate(() => { renderStickers(); renderBundles(); });
+</script>
+</body>
+</html>

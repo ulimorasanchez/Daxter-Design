@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blip & Co. — Animated shorts, characters & stickers</title>
+<meta name="description" content="Blip & Co. makes bite-sized animated shorts on YouTube, TikTok and Instagram, plus a growing catalog of character stickers you can buy right here.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2245%22 fill=%22%23FF5D8F%22/></svg>">
+<link rel="stylesheet" href="css/style.css">
+<meta property="og:title" content="Blip & Co. — Animated shorts & character stickers">
+<meta property="og:description" content="Watch the latest Blip & Co. shorts and shop official character stickers.">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <nav class="nav-pill">
+      <a href="index.html" class="brand"><span class="blob" id="brandBlob"></span> Blip & Co.</a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="videos.html">Videos</a></li>
+        <li><a href="shop.html">Sticker Shop</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="updates.html">Updates</a></li>
+      </ul>
+      <div style="display:flex; align-items:center; gap:10px;">
+        <a href="cart.html" class="nav-cart" aria-label="Cart"><span class="icon-cart-slot"></span><span class="cart-count">0</span></a>
+        <button class="nav-toggle" aria-label="Menu"></button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow">✦ new short out now</span>
+        <h1>Little blobs.<br>Big <span class="highlight">feelings.<svg viewBox="0 0 200 20" preserveAspectRatio="none"><path d="M2 14 Q50 2 100 10 T198 8" stroke="#FFC93C" stroke-width="8" fill="none" stroke-linecap="round"/></svg></span></h1>
+        <p class="hero-sub">Blip & Co. is a one-person animation studio making bite-sized cartoons about a very determined pink blob, his skateboarding dog, and one perpetually sleepy bird. New shorts weekly. Stickers always in stock (mostly).</p>
+        <div class="hero-actions">
+          <a href="videos.html" class="btn btn-primary">Watch the latest short</a>
+          <a href="shop.html" class="btn btn-ghost">Shop stickers</a>
+        </div>
+        <div class="hero-socials">
+          <a class="social-btn" href="https://youtube.com/@blipandco" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube"></a>
+          <a class="social-btn" href="https://tiktok.com/@blipandco" target="_blank" rel="noopener" aria-label="TikTok" title="TikTok"></a>
+          <a class="social-btn" href="https://instagram.com/blipandco" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram"></a>
+        </div>
+      </div>
+      <div class="hero-art">
+        <div class="sparkle" style="top:6%; left:2%; width:34px;"></div>
+        <div class="sparkle s2" style="bottom:8%; right:0; width:26px;"></div>
+        <div class="stat-chip" style="top:8%; right:-4%; animation-delay:.3s;">
+          <span style="font-size:20px;">🎬</span>
+          <div><div class="num">210+</div><div class="label">shorts made</div></div>
+        </div>
+        <div class="stat-chip" style="bottom:10%; left:-6%; animation-delay:1.1s;">
+          <span style="font-size:20px;">🧷</span>
+          <div><div class="num">8K+</div><div class="label">stickers sold</div></div>
+        </div>
+        <div class="blob-wrap" id="heroBlob"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTRO STRIP -->
+  <section style="padding: 10px 0 60px;">
+    <div class="container">
+      <div class="form-card" style="display:flex; gap:24px; align-items:center; flex-wrap:wrap;">
+        <div style="font-size:40px;" class="wobble">👋</div>
+        <div style="flex:1; min-width:240px;">
+          <h3 class="mt-0" style="margin-bottom:6px;">Hey, I'm Mars — I draw the blobs.</h3>
+          <p style="margin:0; color:var(--ink-soft);">I make short animated stories about a small, hungry universe of characters, then turn the best moments into stickers. Everything on this site — every video, every design — comes out of the same tiny home studio.</p>
+        </div>
+        <a href="about.html" class="btn btn-sm btn-sky">More about me →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED VIDEO -->
+  <section style="padding-bottom:70px;">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">▶ featured short</span>
+          <h2>Fresh off the timeline</h2>
+        </div>
+        <a href="videos.html" class="btn btn-sm btn-ghost">All videos →</a>
+      </div>
+      <div id="featuredVideo"></div>
+    </div>
+  </section>
+
+  <!-- QUICK PLATFORM LINKS -->
+  <section style="padding-bottom:70px;">
+    <div class="container">
+      <div class="section-head">
+        <div><span class="eyebrow">🔗 find us everywhere</span><h2>One crew, three platforms</h2></div>
+      </div>
+      <div class="grid-3">
+        <a href="https://youtube.com/@blipandco" target="_blank" rel="noopener" class="sticker-card">
+          <div style="width:44px;height:44px;" id="ytIcon"></div>
+          <h3 style="margin-top:14px;">YouTube</h3>
+          <p class="desc">Full-length shorts, storyboards, and the occasional 3am upload.</p>
+          <span class="btn btn-sm btn-ghost">Subscribe →</span>
+        </a>
+        <a href="https://tiktok.com/@blipandco" target="_blank" rel="noopener" class="sticker-card">
+          <div style="width:44px;height:44px;" id="ttIcon"></div>
+          <h3 style="margin-top:14px;">TikTok</h3>
+          <p class="desc">Fast, chaotic, vertical. This is where Doodle causes the most damage.</p>
+          <span class="btn btn-sm btn-ghost">Follow →</span>
+        </a>
+        <a href="https://instagram.com/blipandco" target="_blank" rel="noopener" class="sticker-card">
+          <div style="width:44px;height:44px;" id="igIcon"></div>
+          <h3 style="margin-top:14px;">Instagram</h3>
+          <p class="desc">Reels, sticker previews, and behind-the-scenes sketch dumps.</p>
+          <span class="btn btn-sm btn-ghost">Follow →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STICKER TEASER -->
+  <section style="padding-bottom:80px;">
+    <div class="container">
+      <div class="bundle-banner">
+        <div>
+          <span class="eyebrow" style="background:var(--yellow); border-color:var(--yellow);">🆕 new drop</span>
+          <h3>Three new stickers just landed.</h3>
+          <p>Limited first-run stock — once they're gone, they're gone until the next print run.</p>
+        </div>
+        <a href="shop.html" class="btn btn-primary">Shop the drop</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section style="padding-bottom:90px;">
+    <div class="container">
+      <div class="newsletter">
+        <span class="eyebrow" style="background:var(--white);">✉ stay in the loop</span>
+        <h2>Get new shorts & sticker drops in your inbox</h2>
+        <p style="color:#FFE1EC;">One email a week, max. No spam, just blobs.</p>
+        <form id="newsletterForm">
+          <input type="email" required placeholder="you@email.com" aria-label="Email address">
+          <button class="btn" type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer" id="footer"></footer>
+
+<script src="js/data.js"></script>
+<script src="js/supabase-config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/store.js"></script>
+<script src="js/main.js"></script>
+<script src="js/footer.js"></script>
+<script>
+  document.getElementById("brandBlob").innerHTML = heroBlip();
+  document.getElementById("heroBlob").innerHTML = heroBlip();
+  document.getElementById("ytIcon").innerHTML = ICONS.youtube;
+  document.getElementById("ttIcon").innerHTML = ICONS.tiktok;
+  document.getElementById("igIcon").innerHTML = ICONS.instagram;
+  document.querySelectorAll(".social-btn")[0].innerHTML = ICONS.youtube;
+  document.querySelectorAll(".social-btn")[1].innerHTML = ICONS.tiktok;
+  document.querySelectorAll(".social-btn")[2].innerHTML = ICONS.instagram;
+
+  // Featured video = most recent flagged featured, else newest
+  function renderFeatured(){
+    const featured = VIDEOS.find(v => v.featured) || [...VIDEOS].sort((a,b)=> new Date(b.date)-new Date(a.date))[0];
+    if(!featured) return;
+    document.getElementById("featuredVideo").innerHTML = `
+      <a href="${featured.url}" target="_blank" rel="noopener" class="sticker-card" style="display:grid; grid-template-columns: 1.1fr 1fr; gap:26px; align-items:center; --rot:-1deg;">
+        <div class="thumb" style="aspect-ratio:16/10; margin-bottom:0;">
+          ${mediaFor(featured, sceneArt(featured.thumb))}
+          <span class="platform-chip">${platformIcon(featured.platform)} ${featured.platform}</span>
+          <div class="play-badge">${ICONS.play}</div>
+        </div>
+        <div>
+          <span class="eyebrow">${formatViews(featured.views)} · ${timeAgo(featured.date)}</span>
+          <h3 style="font-size:26px; margin-top:12px;">${featured.title}</h3>
+          <p class="desc" style="font-size:15px;">${featured.description}</p>
+          <span class="btn btn-sm btn-primary">Watch now →</span>
+        </div>
+      </a>`;
+  }
+  renderFeatured();
+  onStoreUpdate(renderFeatured);
+
+  document.getElementById("newsletterForm").addEventListener("submit", e => {
+    e.preventDefault();
+    showToast("You're on the list! 🎉");
+    e.target.reset();
+  });
+</script>
+</body>
+</html>

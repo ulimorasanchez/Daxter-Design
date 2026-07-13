@@ -9,7 +9,7 @@
    and deployed as-is.
    ========================================================================= */
 
-const SUPABASE_URL = "https://ejqgndnzzmyjnjslgawh.supabase.co/rest/v1/";
+const SUPABASE_URL = "https://ejqgndnzzmyjnjslgawh.supabase.co";
 const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVqcWduZG56em15am5qc2xnYXdoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODM4OTQ4NTAsImV4cCI6MjA5OTQ3MDg1MH0.GuPn09c5bIa6QX-OoccjkYUPC_TSQWwjYd_DkNEvkXk";
 
 window.SUPABASE_URL = SUPABASE_URL;

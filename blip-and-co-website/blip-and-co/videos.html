@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Videos — Blip & Co.</title>
-<meta name="description" content="Every Blip & Co. animated short in one place — from YouTube, TikTok and Instagram. Sort by newest, most popular, or platform.">
+<meta name="description" content="Watch all Blip & Co. animated shorts.">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -20,94 +20,43 @@
         <li><a href="about.html">About</a></li>
         <li><a href="updates.html">Updates</a></li>
       </ul>
-      <div style="display:flex; align-items:center; gap:10px;">
-        <a href="cart.html" class="nav-cart" aria-label="Cart"><span class="icon-cart-slot"></span><span class="cart-count">0</span></a>
-        <button class="nav-toggle" aria-label="Menu"></button>
-      </div>
+      <button class="nav-toggle" aria-label="Menu"></button>
     </nav>
   </div>
 </header>
 
 <main>
   <section class="page-hero">
-    <div class="container">
-      <span class="eyebrow">▶ the archive</span>
-      <h1>Every short, <span style="color:var(--pink)">all in one place.</span></h1>
-      <p>New episodes drop every week across YouTube, TikTok and Instagram — this page updates itself the moment a new one is added.</p>
-    </div>
+    <h1>All Videos</h1>
+    <p>Every animated short featuring Blip, Doodle, and Nib.</p>
   </section>
 
-  <section style="padding:20px 0 90px;">
-    <div class="container">
-      <div class="filter-bar">
-        <div class="filter-group" id="platformFilters">
-          <button class="chip-btn active" data-platform="all">All platforms</button>
-          <button class="chip-btn" data-platform="youtube">YouTube</button>
-          <button class="chip-btn" data-platform="tiktok">TikTok</button>
-          <button class="chip-btn" data-platform="instagram">Instagram</button>
-        </div>
-        <select class="chip-btn" id="sortSelect" aria-label="Sort videos">
-          <option value="newest">Sort: Newest</option>
-          <option value="popular">Sort: Most popular</option>
-        </select>
-      </div>
-
-      <div class="grid-3" id="videoGrid"></div>
-      <p id="emptyMsg" style="display:none; text-align:center; color:var(--ink-soft); padding:40px 0;">No shorts on this platform yet — check back soon!</p>
-    </div>
+  <section>
+    <div class="container grid-4" id="videoGrid"></div>
   </section>
 </main>
 
 <footer class="site-footer" id="footer"></footer>
 
 <script src="js/data.js"></script>
-<script src="js/supabase-config.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="js/store.js"></script>
 <script src="js/main.js"></script>
 <script src="js/footer.js"></script>
 <script>
   document.getElementById("brandBlob").innerHTML = heroBlip();
 
-  let currentPlatform = "all";
-  let currentSort = "newest";
-
-  function renderVideos(){
-    let list = [...VIDEOS];
-    if(currentPlatform !== "all") list = list.filter(v => v.platform === currentPlatform);
-    list.sort((a,b) => currentSort === "popular" ? b.views - a.views : new Date(b.date) - new Date(a.date));
-
-    const grid = document.getElementById("videoGrid");
-    document.getElementById("emptyMsg").style.display = list.length ? "none" : "block";
-    grid.innerHTML = list.map(v => `
-      <a href="${v.url}" target="_blank" rel="noopener" class="sticker-card video-card">
-        <div class="thumb">
-          ${mediaFor(v, sceneArt(v.thumb))}
-          <span class="platform-chip">${platformIcon(v.platform)} ${v.platform}</span>
-          <div class="play-badge">${ICONS.play}</div>
-        </div>
+  const grid = document.getElementById("videoGrid");
+  DEFAULT_VIDEOS.forEach(v => {
+    grid.innerHTML += `
+      <div class="video-card">
+        <div class="thumb">${sceneArt(v.thumb)}</div>
         <h3>${v.title}</h3>
         <p class="desc">${v.description}</p>
-        <div class="video-meta"><span>${formatViews(v.views)}</span><span>${timeAgo(v.date)}</span></div>
-      </a>
-    `).join("");
-  }
-
-  document.getElementById("platformFilters").addEventListener("click", e => {
-    const btn = e.target.closest("[data-platform]");
-    if(!btn) return;
-    document.querySelectorAll("#platformFilters .chip-btn").forEach(b => b.classList.remove("active"));
-    btn.classList.add("active");
-    currentPlatform = btn.dataset.platform;
-    renderVideos();
+        <div class="video-meta">
+          <span>${formatViews(v.views)}</span>
+          <a href="${v.url}" target="_blank" class="btn btn-sm btn-primary">Watch</a>
+        </div>
+      </div>`;
   });
-  document.getElementById("sortSelect").addEventListener("change", e => {
-    currentSort = e.target.value;
-    renderVideos();
-  });
-
-  renderVideos();
-  onStoreUpdate(renderVideos);
 </script>
 </body>
 </html>

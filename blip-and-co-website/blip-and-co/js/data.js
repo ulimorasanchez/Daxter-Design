@@ -90,37 +90,38 @@ const VIDEOS = [
 const STICKERS = [
   {
     id: "dax001",
-    name: "FNAF Inspired Plushie Stickers",
-    art: "sticker-generic",
-    etsy: "https://www.etsy.com/listing/4435190882/fnaf-inspired-pushies-stickers"
+    name: "Fennekin Sticker",
+    img: "https://i.etsystatic.com/38936010/r/il/0f4e8d/7273879187/il_1140xN.7273879187_7tv4.jpg",
+    etsy: "https://www.etsy.com/listing/4375088572/fennekin-stickers"
   },
   {
     id: "dax002",
-    name: "Tepig Pokémon Sticker",
-    art: "sticker-generic",
-    etsy: "https://www.etsy.com/listing/4383065811/tepig-pokemon-sticker"
+    name: "Cute Fox Sticker",
+    img: "https://i.etsystatic.com/38936010/r/il/5941a8/7225941438/il_600x600.7225941438_46g9.jpg",
+    etsy: "#"
   },
   {
     id: "dax003",
-    name: "Jak & Daxter Vinyl Sticker",
-    art: "sticker-generic",
-    etsy: "https://www.etsy.com/listing/1852814408/jak-and-daxter-vinyl-sticker-3-76cm"
+    name: "Cute Cat Sticker",
+    img: "https://i.etsystatic.com/38936010/r/il/4cc95d/7567298147/il_600x600.7567298147_co08.jpg",
+    etsy: "#"
   },
   {
     id: "dax004",
-    name: "Jak & Daxter Sticker Sheet",
-    art: "sticker-generic",
-    etsy: "https://www.etsy.com/listing/4510363533/jak-and-daxter-sticker-sheet"
+    name: "Cute Bunny Sticker",
+    img: "https://i.etsystatic.com/38936010/r/il/db66f6/7558975822/il_600x600.7558975822_ju4d.jpg",
+    etsy: "#"
   },
   {
     id: "dax005",
-    name: "Kawaii Fruit Cat Stickers",
-    art: "sticker-generic",
-    etsy: "https://www.etsy.com/listing/4434171601/cute-fruit-cat-stickers-pack-kawaii"
+    name: "Fruit Cat Sticker",
+    img: "https://i.etsystatic.com/38936010/c/2064/2064/160/370/il/bfb5f8/6824696504/il_600x600.6824696504_k8yt.jpg",
+    etsy: "#"
   }
 ];
 
 window.DEFAULT_STICKERS = STICKERS;
+
 
 
 /* ---------------- BUNDLES ---------------- */

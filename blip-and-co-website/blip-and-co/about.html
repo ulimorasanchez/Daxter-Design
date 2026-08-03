@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About — Blip & Co.</title>
-<meta name="description" content="Meet Mars, the artist behind Blip & Co., and the story behind Blip, Doodle and Nib.">
+<meta name="description" content="Meet Blip, Doodle, and Nib — the tiny chaotic trio behind Blip & Co.">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -20,120 +20,91 @@
         <li><a href="about.html" class="active">About</a></li>
         <li><a href="updates.html">Updates</a></li>
       </ul>
-      <div style="display:flex; align-items:center; gap:10px;">
-        <a href="cart.html" class="nav-cart" aria-label="Cart"><span class="icon-cart-slot"></span><span class="cart-count">0</span></a>
-        <button class="nav-toggle" aria-label="Menu"></button>
-      </div>
+      <button class="nav-toggle" aria-label="Menu"></button>
     </nav>
   </div>
 </header>
 
 <main>
-  <section style="padding:56px 0 30px;">
+
+  <section class="page-hero">
+    <h1>About Blip & Co.</h1>
+    <p>The tiny animated universe of Blip, Doodle, and Nib — built one chaotic short at a time.</p>
+  </section>
+
+  <section>
     <div class="container about-hero">
-      <div class="center-col">
-        <div style="width:100%; max-width:340px;" class="wobble" id="aboutBlob"></div>
-      </div>
       <div>
-        <span class="eyebrow">✦ the person behind the blobs</span>
-        <h1>Hi, I'm Mars.</h1>
-        <p class="hero-sub">I'm a one-person animation studio working out of a very cluttered apartment, making short cartoons about a small hungry blob named Blip, his skateboard-obsessed dog Doodle, and their perpetually unbothered bird-cat roommate Nib.</p>
-        <p class="hero-sub">What started as a sketchbook doodle in 2023 turned into a weekly animated short, and eventually into a sticker shop, because apparently everyone wants Blip's unimpressed face on their water bottle. I don't blame them.</p>
+        <h2>Meet the Crew</h2>
+        <p>Blip is a hungry blob with endless optimism. Doodle is a skateboarding dog with zero fear and zero brakes. Nib is a sleepy bird‑cat who naps through most disasters.</p>
+        <p>Blip & Co. started as a small doodle series and grew into weekly animated shorts, stickers, and behind‑the‑scenes posts.</p>
       </div>
+      <div class="blob-wrap wobble" id="aboutBlob"></div>
     </div>
   </section>
 
-  <section style="padding:60px 0;">
+  <section>
     <div class="container">
-      <div class="section-head"><div><span class="eyebrow">📖 origin story</span><h2>Where the characters came from</h2></div></div>
+      <h2>Origin Story</h2>
       <div class="timeline">
         <div class="timeline-item">
-          <span class="eyebrow" style="background:var(--yellow); border-color:var(--yellow);">2023</span>
-          <h3 style="margin-top:10px;">A blob shows up in a notebook margin</h3>
-          <p style="color:var(--ink-soft);">Blip started as a doodle drawn during a boring meeting — a round pink shape with a face that somehow had more personality than most cartoon leads. He stuck around.</p>
+          <h3>2024 — The First Doodle</h3>
+          <p>Blip was sketched on a sticky note during a late-night animation session. The round shape stuck — literally.</p>
         </div>
+
         <div class="timeline-item">
-          <span class="eyebrow" style="background:var(--sky); border-color:var(--sky);">2024</span>
-          <h3 style="margin-top:10px;">Doodle and Nib join the crew</h3>
-          <p style="color:var(--ink-soft);">Blip needed a rival and a straight man. Enter Doodle, a chaotic good dog-blob with zero spatial awareness, and Nib, a bird-cat who has never once looked impressed by anything.</p>
+          <h3>2025 — Doodle Joins</h3>
+          <p>A chaotic dog with a skateboard appeared in the margins of a storyboard. He immediately caused problems.</p>
         </div>
+
         <div class="timeline-item">
-          <span class="eyebrow" style="background:var(--mint); border-color:var(--mint);">2025</span>
-          <h3 style="margin-top:10px;">The first sticker sheet sells out in a day</h3>
-          <p style="color:var(--ink-soft);">A test batch of 50 "Blip Mid-Zoom" stickers, made for fun, sold out before I finished making the second batch. The shop was born out of pure demand.</p>
-        </div>
-        <div class="timeline-item">
-          <span class="eyebrow" style="background:var(--pink); border-color:var(--pink); color:#fff;">2026</span>
-          <h3 style="margin-top:10px;">Weekly shorts, a real shop, and this website</h3>
-          <p style="color:var(--ink-soft);">Now: a new short almost every week, a growing sticker catalog, and one increasingly organized studio (a low bar, but we're clearing it).</p>
+          <h3>2026 — Nib Arrives</h3>
+          <p>A sleepy hybrid creature was added to balance the chaos. It did not work. Nib sleeps through everything.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section style="padding:20px 0 60px;">
+  <section>
     <div class="container">
-      <div class="grid-3">
-        <div class="sticker-card" style="--rot:-1deg;">
-          <div style="font-size:32px;">🎯</div>
-          <h3>Mission</h3>
-          <p class="desc">Make small, funny, sincere stories that take thirty seconds to watch and somehow live in your head all week.</p>
-        </div>
-        <div class="sticker-card" style="--rot:1deg;">
-          <div style="font-size:32px;">🎨</div>
-          <h3>Style</h3>
-          <p class="desc">Rounded shapes, big expressions, squash-and-stretch animation. Nothing on screen is ever perfectly still.</p>
-        </div>
-        <div class="sticker-card" style="--rot:-2deg;">
-          <div style="font-size:32px;">💌</div>
-          <h3>Community first</h3>
-          <p class="desc">Every character quirk in the show started as a comment or a sticker request. You're basically a co-writer at this point.</p>
-        </div>
+      <h2>Say Hi</h2>
+      <div class="form-card" id="contact">
+        <form id="contactForm">
+          <div class="form-field">
+            <label>Your name</label>
+            <input type="text" required>
+          </div>
+          <div class="form-field">
+            <label>Your email</label>
+            <input type="email" required>
+          </div>
+          <div class="form-field">
+            <label>Message</label>
+            <textarea rows="5" required></textarea>
+          </div>
+          <button class="btn btn-primary btn-block">Send message</button>
+        </form>
       </div>
     </div>
   </section>
 
-  <section id="contact" style="padding-bottom:100px;">
-    <div class="container" style="max-width:640px;">
-      <div class="form-card">
-        <span class="eyebrow">✉ get in touch</span>
-        <h2 style="margin-top:12px;">Say hi, pitch a collab, or report a Doodle-shaped bug</h2>
-        <form id="contactForm">
-          <div class="form-field"><label for="cname">Name</label><input id="cname" required placeholder="Your name"></div>
-          <div class="form-field"><label for="cemail">Email</label><input id="cemail" type="email" required placeholder="you@email.com"></div>
-          <div class="form-field"><label for="ctopic">Topic</label>
-            <select id="ctopic">
-              <option>General hello</option>
-              <option>Collaboration / brand inquiry</option>
-              <option>Sticker order issue</option>
-              <option>Press</option>
-            </select>
-          </div>
-          <div class="form-field"><label for="cmsg">Message</label><textarea id="cmsg" rows="4" required placeholder="What's up?"></textarea></div>
-          <button class="btn btn-primary btn-block" type="submit">Send message</button>
-        </form>
-        <p style="text-align:center; margin-top:16px; font-size:14px; color:var(--ink-soft);">Prefer email? Reach me directly at <a href="mailto:hello@blipandco.com" style="color:var(--pink-dark); font-weight:700;">hello@blipandco.com</a></p>
-      </div>
-    </div>
-  </section>
 </main>
 
 <footer class="site-footer" id="footer"></footer>
 
 <script src="js/data.js"></script>
-<script src="js/supabase-config.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="js/store.js"></script>
 <script src="js/main.js"></script>
 <script src="js/footer.js"></script>
 <script>
   document.getElementById("brandBlob").innerHTML = heroBlip();
   document.getElementById("aboutBlob").innerHTML = heroBlip();
+
   document.getElementById("contactForm").addEventListener("submit", e => {
     e.preventDefault();
-    showToast("Message sent — I'll write back soon! 💌");
+    showToast("Message sent! 📬");
     e.target.reset();
   });
 </script>
+
 </body>
 </html>

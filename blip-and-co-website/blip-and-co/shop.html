@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sticker Shop — Blip & Co.</title>
-<meta name="description" content="Browse Blip & Co. stickers — cute, chaotic, and ready for your laptop or water bottle.">
+<title>Daxter Studios — Sticker Shop</title>
+<meta name="description" content="Browse stickers from Daxter Studios — cute, creative, and available on Etsy.">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -12,7 +12,9 @@
 <header class="site-header">
   <div class="container">
     <nav class="nav-pill">
-      <a href="index.html" class="brand"><span class="blob" id="brandBlob"></span> Blip & Co.</a>
+      <a href="index.html" class="brand">
+        <span class="blob" id="brandBlob"></span> Daxter Studios
+      </a>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="videos.html">Videos</a></li>
@@ -26,9 +28,10 @@
 </header>
 
 <main>
+
   <section class="page-hero">
     <h1>Sticker Shop</h1>
-    <p>Blip, Doodle, and Nib — now in sticker form. Each design links directly to Etsy.</p>
+    <p>Real sticker photos from Daxter Studios — each one links directly to Etsy.</p>
   </section>
 
   <section>
@@ -40,6 +43,7 @@
       <div class="grid-4" id="stickerGrid"></div>
     </div>
   </section>
+
 </main>
 
 <footer class="site-footer" id="footer"></footer>
@@ -47,27 +51,29 @@
 <script src="js/data.js"></script>
 <script src="js/main.js"></script>
 <script src="js/footer.js"></script>
+
 <script>
+  // Brand blob
   document.getElementById("brandBlob").innerHTML = heroBlip();
 
+  // Render stickers with real photos
   const grid = document.getElementById("stickerGrid");
 
-DEFAULT_STICKERS.forEach(s => {
-  grid.innerHTML += `
-    <div class="sticker-card shop-card">
-      <div class="sticker-thumb">
-        <img src="${s.img}" alt="${s.name}">
+  DEFAULT_STICKERS.forEach(s => {
+    grid.innerHTML += `
+      <div class="sticker-card shop-card">
+        <div class="sticker-thumb">
+          <img src="${s.img}" alt="${s.name}">
+        </div>
+        <h3>${s.name}</h3>
+        <div class="row">
+          <a href="${s.etsy}" target="_blank" class="btn btn-sm btn-primary">
+            View on Etsy
+          </a>
+        </div>
       </div>
-      <h3>${s.name}</h3>
-      <div class="row">
-        <a href="${s.etsy}" target="_blank" class="btn btn-sm btn-primary">
-          View on Etsy
-        </a>
-      </div>
-    </div>
-  `;
-});
-
+    `;
+  });
 </script>
 
 </body>

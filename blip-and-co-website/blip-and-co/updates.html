@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Updates — Blip & Co.</title>
-<meta name="description" content="The latest news from Blip & Co: new videos, new sticker drops, behind-the-scenes and events.">
+<meta name="description" content="Behind-the-scenes posts, new stickers, and video announcements from Blip & Co.">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -12,7 +12,9 @@
 <header class="site-header">
   <div class="container">
     <nav class="nav-pill">
-      <a href="index.html" class="brand"><span class="blob" id="brandBlob"></span> Blip & Co.</a>
+      <a href="index.html" class="brand">
+        <span class="blob" id="brandBlob"></span> Blip & Co.
+      </a>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="videos.html">Videos</a></li>
@@ -20,82 +22,60 @@
         <li><a href="about.html">About</a></li>
         <li><a href="updates.html" class="active">Updates</a></li>
       </ul>
-      <div style="display:flex; align-items:center; gap:10px;">
-        <a href="cart.html" class="nav-cart" aria-label="Cart"><span class="icon-cart-slot"></span><span class="cart-count">0</span></a>
-        <button class="nav-toggle" aria-label="Menu"></button>
-      </div>
+      <button class="nav-toggle" aria-label="Menu"></button>
     </nav>
   </div>
 </header>
 
 <main>
+
   <section class="page-hero">
-    <div class="container">
-      <span class="eyebrow">📣 the feed</span>
-      <h1>Updates & <span style="color:var(--pink)">behind the scenes.</span></h1>
-      <p>New videos, new sticker drops, and the occasional look at how the sausage (blob) gets made.</p>
-    </div>
+    <h1>Updates</h1>
+    <p>New stickers, new videos, behind‑the‑scenes posts, and event announcements.</p>
   </section>
 
-  <section style="padding:20px 0 90px;">
-    <div class="container">
-      <div class="filter-bar">
-        <div class="filter-group" id="typeFilters">
-          <button class="chip-btn active" data-type="all">All updates</button>
-          <button class="chip-btn" data-type="video">New videos</button>
-          <button class="chip-btn" data-type="sticker">New stickers</button>
-          <button class="chip-btn" data-type="bts">Behind the scenes</button>
-          <button class="chip-btn" data-type="event">Events</button>
-        </div>
-      </div>
-
-      <div id="postFeed" style="display:flex; flex-direction:column; gap:26px;"></div>
-    </div>
+  <section>
+    <div class="container" id="updatesGrid"></div>
   </section>
+
 </main>
 
 <footer class="site-footer" id="footer"></footer>
 
 <script src="js/data.js"></script>
-<script src="js/supabase-config.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="js/store.js"></script>
 <script src="js/main.js"></script>
 <script src="js/footer.js"></script>
+
 <script>
+  // Brand blob
   document.getElementById("brandBlob").innerHTML = heroBlip();
-  const badgeLabel = { video: "New video", sticker: "New sticker", bts: "Behind the scenes", event: "Event" };
-  const badgeClass = { video: "badge-video", sticker: "badge-sticker", bts: "badge-bts", event: "badge-event" };
-  let currentType = "all";
 
-  function renderFeed(){
-    let list = [...UPDATES].sort((a,b)=> new Date(b.date)-new Date(a.date));
-    if(currentType !== "all") list = list.filter(u => u.type === currentType);
-    const feed = document.getElementById("postFeed");
-    feed.innerHTML = list.length ? list.map(u => `
-      <article class="sticker-card post-card" style="--rot:0deg;">
-        <div class="sticker-thumb" style="margin-bottom:0; aspect-ratio:1/1;">${mediaFor(u, stickerArt(u.art) || sceneArt(u.art))}</div>
-        <div>
-          <span class="badge ${badgeClass[u.type]}">${badgeLabel[u.type]}</span>
-          <span style="font-family:var(--font-mono); font-size:12px; color:var(--ink-soft); margin-left:8px;">${timeAgo(u.date)}</span>
-          <h3 style="margin-top:8px;">${u.title}</h3>
-          <p class="desc" style="font-size:15px;">${u.excerpt}</p>
+  // Render updates
+  const grid = document.getElementById("updatesGrid");
+
+  DEFAULT_UPDATES.forEach(u => {
+    const badgeClass = {
+      video: "badge-video",
+      sticker: "badge-sticker",
+      bts: "badge-bts",
+      event: "badge-event"
+    }[u.type] || "badge-video";
+
+    grid.innerHTML += `
+      <div class="post-card">
+        <div class="thumb">
+          ${stickerArt(u.art)}
         </div>
-      </article>
-    `).join("") : `<p style="text-align:center; color:var(--ink-soft); padding:40px 0;">Nothing here yet — check another category.</p>`;
-  }
-
-  document.getElementById("typeFilters").addEventListener("click", e => {
-    const btn = e.target.closest("[data-type]");
-    if(!btn) return;
-    document.querySelectorAll("#typeFilters .chip-btn").forEach(b => b.classList.remove("active"));
-    btn.classList.add("active");
-    currentType = btn.dataset.type;
-    renderFeed();
+        <div>
+          <span class="badge ${badgeClass}">${u.type}</span>
+          <h3>${u.title}</h3>
+          <p class="desc">${u.excerpt}</p>
+          <p class="video-meta">${timeAgo(u.date)}</p>
+        </div>
+      </div>
+    `;
   });
-
-  renderFeed();
-  onStoreUpdate(renderFeed);
 </script>
+
 </body>
 </html>

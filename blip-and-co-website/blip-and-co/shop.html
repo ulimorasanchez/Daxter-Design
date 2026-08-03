@@ -52,19 +52,22 @@
 
   const grid = document.getElementById("stickerGrid");
 
-  DEFAULT_STICKERS.forEach(s => {
-    grid.innerHTML += `
-      <div class="sticker-card shop-card">
-        <div class="sticker-thumb">
-          ${stickerArt(s.art)}
-        </div>
-        <h3>${s.name}</h3>
-        <div class="row">
-          <a href="${s.etsy}" target="_blank" class="btn btn-sm btn-primary">View on Etsy</a>
-        </div>
+DEFAULT_STICKERS.forEach(s => {
+  grid.innerHTML += `
+    <div class="sticker-card shop-card">
+      <div class="sticker-thumb">
+        <img src="${s.img}" alt="${s.name}">
       </div>
-    `;
-  });
+      <h3>${s.name}</h3>
+      <div class="row">
+        <a href="${s.etsy}" target="_blank" class="btn btn-sm btn-primary">
+          View on Etsy
+        </a>
+      </div>
+    </div>
+  `;
+});
+
 </script>
 
 </body>

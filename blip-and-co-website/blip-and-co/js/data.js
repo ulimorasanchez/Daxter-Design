@@ -89,86 +89,39 @@ const VIDEOS = [
 /* category: "blip" | "doodle" | "nib" | "duo" | "seasonal"             */
 const STICKERS = [
   {
-    id: "s001",
-    name: "Blip Mid-Zoom",
-    description: "Blip caught absolutely sprinting toward snacks.",
-    price: 3.5,
-    category: "blip",
-    art: "sticker-blip-run",
-    isNew: true,
-    stock: 42
+    id: "dax001",
+    name: "FNAF Inspired Plushie Stickers",
+    art: "sticker-generic",
+    etsy: "https://www.etsy.com/listing/4435190882/fnaf-inspired-pushies-stickers"
   },
   {
-    id: "s002",
-    name: "Sleepy Nib",
-    description: "For when the bed is winning and you are not fighting it.",
-    price: 3.0,
-    category: "nib",
-    art: "sticker-nib-sleep",
-    isNew: true,
-    stock: 58
+    id: "dax002",
+    name: "Tepig Pokémon Sticker",
+    art: "sticker-generic",
+    etsy: "https://www.etsy.com/listing/4383065811/tepig-pokemon-sticker"
   },
   {
-    id: "s003",
-    name: "Doodle Skate Fail",
-    description: "The exact millisecond before the fall. Iconic.",
-    price: 3.5,
-    category: "doodle",
-    art: "sticker-doodle-skate",
-    isNew: false,
-    stock: 12
+    id: "dax003",
+    name: "Jak & Daxter Vinyl Sticker",
+    art: "sticker-generic",
+    etsy: "https://www.etsy.com/listing/1852814408/jak-and-daxter-vinyl-sticker-3-76cm"
   },
   {
-    id: "s004",
-    name: "Blip + Doodle Fist Bump",
-    description: "Best friends, worst decisions, together always.",
-    price: 4.0,
-    category: "duo",
-    art: "sticker-duo-fistbump",
-    isNew: false,
-    stock: 30
+    id: "dax004",
+    name: "Jak & Daxter Sticker Sheet",
+    art: "sticker-generic",
+    etsy: "https://www.etsy.com/listing/4510363533/jak-and-daxter-sticker-sheet"
   },
   {
-    id: "s005",
-    name: "Blip Rainy Day",
-    description: "A puddle-jumping Blip for your laptop, water bottle, or soul.",
-    price: 3.5,
-    category: "seasonal",
-    art: "sticker-blip-rain",
-    isNew: false,
-    stock: 21
-  },
-  {
-    id: "s006",
-    name: "Nib Side-Eye",
-    description: "The look Nib gives when you say 'five more minutes.'",
-    price: 3.0,
-    category: "nib",
-    art: "sticker-nib-sideeye",
-    isNew: false,
-    stock: 0
-  },
-  {
-    id: "s007",
-    name: "Doodle Loaf Mode",
-    description: "Doodle has folded into a perfect little loaf. Do not disturb.",
-    price: 3.0,
-    category: "doodle",
-    art: "sticker-doodle-loaf",
-    isNew: false,
-    stock: 37
-  },
-  {
-    id: "s008",
-    name: "Blip Sticker Heist",
-    description: "Blip, mid-crime, clutching a single stolen sticker sheet.",
-    price: 4.0,
-    category: "blip",
-    art: "sticker-blip-heist",
-    isNew: true,
-    stock: 19
+    id: "dax005",
+    name: "Kawaii Fruit Cat Stickers",
+    art: "sticker-generic",
+    etsy: "https://www.etsy.com/listing/4434171601/cute-fruit-cat-stickers-pack-kawaii"
   }
 ];
+
+window.DEFAULT_STICKERS = STICKERS;
+
 
 /* ---------------- BUNDLES ---------------- */
 const BUNDLES = [

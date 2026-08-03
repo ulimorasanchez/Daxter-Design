@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Videos — Blip & Co.</title>
-<meta name="description" content="Watch all Blip & Co. animated shorts.">
+<title>Daxter Studios — Videos</title>
+<meta name="description" content="Watch all animations and videos created by Daxter Studios.">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -12,7 +12,9 @@
 <header class="site-header">
   <div class="container">
     <nav class="nav-pill">
-      <a href="index.html" class="brand"><span class="blob" id="brandBlob"></span> Blip & Co.</a>
+      <a href="index.html" class="brand">
+        <span class="blob" id="brandBlob"></span> Daxter Studios
+      </a>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="videos.html" class="active">Videos</a></li>
@@ -27,8 +29,8 @@
 
 <main>
   <section class="page-hero">
-    <h1>All Videos</h1>
-    <p>Every animated short featuring Blip, Doodle, and Nib.</p>
+    <h1>Videos</h1>
+    <p>Animations and creative projects from Daxter Studios.</p>
   </section>
 
   <section>
@@ -41,10 +43,14 @@
 <script src="js/data.js"></script>
 <script src="js/main.js"></script>
 <script src="js/footer.js"></script>
+
 <script>
+  // Brand blob
   document.getElementById("brandBlob").innerHTML = heroBlip();
 
+  // Render videos
   const grid = document.getElementById("videoGrid");
+
   DEFAULT_VIDEOS.forEach(v => {
     grid.innerHTML += `
       <div class="video-card">
@@ -55,8 +61,10 @@
           <span>${formatViews(v.views)}</span>
           <a href="${v.url}" target="_blank" class="btn btn-sm btn-primary">Watch</a>
         </div>
-      </div>`;
+      </div>
+    `;
   });
 </script>
+
 </body>
 </html>

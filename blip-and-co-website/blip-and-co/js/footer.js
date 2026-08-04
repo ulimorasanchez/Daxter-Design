@@ -3,7 +3,7 @@ document.getElementById("footer").innerHTML = `
 
     <div>
       <div class="footer-brand">
-        <span class="blob"></span> Daxter Studios
+        <img src="img/daxterlogo.jpg" class="brand-icon"> Daxter Design
       </div>
       <p>Art, animation, stickers, and creative chaos.</p>
     </div>
@@ -34,7 +34,7 @@ document.getElementById("footer").innerHTML = `
   </div>
 
   <div class="footer-bottom">
-    <span>© 2026 Daxter Studios</span>
+    <span>© 2026 Daxter Design</span>
     <span>Made with love and stickers</span>
   </div>
 `;

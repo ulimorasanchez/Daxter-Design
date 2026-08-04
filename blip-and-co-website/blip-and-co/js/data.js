@@ -45,27 +45,27 @@ const STICKERS = [
   },
   {
     id: "dax002",
-    name: "Cute Fox Sticker",
+    name: "Froakie Stickers",
     img: "https://i.etsystatic.com/38936010/r/il/5941a8/7225941438/il_600x600.7225941438_46g9.jpg",
-    etsy: "#"
+    etsy: "https://www.etsy.com/listing/4375091708/froakie-stickers"
   },
   {
     id: "dax003",
-    name: "Cute Cat Sticker",
-    img: "https://i.etsystatic.com/38936010/r/il/4cc95d/7567298147/il_600x600.7567298147_co08.jpg",
-    etsy: "#"
+    name: "Gengar Stickers",
+    img: "https://i.etsystatic.com/38936010/c/2064/2064/160/370/il/bfb5f8/6824696504/il_600x600.6824696504_k8yt.jpg",
+    etsy: "https://www.etsy.com/listing/4297949926/gengar-stickers"
   },
   {
     id: "dax004",
-    name: "Cute Bunny Sticker",
+    name: "Cute Fruit Cat Stickers Pack | Kawaii Waterproof Vinyl Cat Stickers | Avocado Strawberry Banana Cats",
     img: "https://i.etsystatic.com/38936010/r/il/db66f6/7558975822/il_600x600.7558975822_ju4d.jpg",
-    etsy: "#"
+    etsy: "https://www.etsy.com/listing/4434171601/cute-fruit-cat-stickers-pack-kawaii"
   },
   {
     id: "dax005",
-    name: "Fruit Cat Sticker",
-    img: "https://i.etsystatic.com/38936010/c/2064/2064/160/370/il/bfb5f8/6824696504/il_600x600.6824696504_k8yt.jpg",
-    etsy: "#"
+    name: "Gengar-inspired hard enamel pin",
+    img: "https://i.etsystatic.com/38936010/r/il/4cc95d/7567298147/il_600x600.7567298147_co08.jpg",
+    etsy: "https://www.etsy.com/listing/4426484144/gengar-inspired-hard-enamel-pin"
   }
 ];
 

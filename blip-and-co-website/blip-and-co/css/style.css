@@ -420,3 +420,68 @@ section{ position: relative; z-index: 1; }
 .hero-art .brand-icon { width: 120px; height: 120px; }
 .about-hero .brand-icon { width: 100px; height: 100px; }
 .footer-brand .brand-icon { width: 50px; height: 50px; }
+
+
+/* ===================== FOOTER ===================== */
+.site-footer{
+  background: linear-gradient(135deg, #2A1F3D 0%, #3A1F5D 60%, #7A4DCC 100%);
+  padding: 24px 0 18px;
+  margin-top: 60px;
+  color: var(--white);
+}
+
+.footer-grid{
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-brand{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.footer-social{
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.social-link{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--white);
+  transition: opacity .2s ease, transform .2s ease;
+}
+
+.social-link img{
+  width: 22px;
+  height: 22px;
+  filter: brightness(1.2);
+}
+
+.social-link:hover{
+  opacity: 0.8;
+  transform: translateY(-2px);
+}
+
+.footer-bottom{
+  margin-top: 16px;
+  text-align: center;
+  font-size: 14px;
+  opacity: 0.85;
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+}
+

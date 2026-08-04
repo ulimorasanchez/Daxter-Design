@@ -215,11 +215,6 @@ function timeAgo(dateStr){
   if(diff < 30) return Math.floor(diff) + "d ago";
   return Math.floor(diff/30) + "mo ago";
 }
-function formatViews(n){
-  if(n >= 1000000) return (n/1000000).toFixed(1) + "M views";
-  if(n >= 1000) return Math.round(n/1000) + "K views";
-  return n + " views";
-}
 function fmtPrice(n){ return "$" + n.toFixed(2); }
 
 /* ---------------- BACKGROUND DECORATION ---------------- */

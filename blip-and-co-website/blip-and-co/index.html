@@ -61,10 +61,13 @@
 <script src="js/footer.js"></script>
 <script>
   const featured = DEFAULT_VIDEOS.find(v => v.featured);
-  if(featured){
+  if (featured) {
     document.getElementById("featuredVideo").innerHTML = `
       <div class="video-card">
-        <div class="thumb">${sceneArt(featured.thumb)}</div>
+        <div class="thumb">
+          <img src="${featured.thumb}" alt="${featured.title}">
+        </div>
+
         <h3>${featured.title}</h3>
         <p class="desc">${featured.description}</p>
         <div class="video-meta">
@@ -73,6 +76,7 @@
       </div>`;
   }
 </script>
+
 
 </body>
 </html>

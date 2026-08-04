@@ -59,16 +59,12 @@
 <script src="js/data.js"></script>
 <script src="js/main.js"></script>
 <script src="js/footer.js"></script>
-
 <script>
   const featured = DEFAULT_VIDEOS.find(v => v.featured);
   if(featured){
     document.getElementById("featuredVideo").innerHTML = `
       <div class="video-card">
-        <div class="thumb">
-  <img src="${v.thumb}" alt="${v.title}">
-</div>
-
+        <div class="thumb">${sceneArt(featured.thumb)}</div>
         <h3>${featured.title}</h3>
         <p class="desc">${featured.description}</p>
         <div class="video-meta">

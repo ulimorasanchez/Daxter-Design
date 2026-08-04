@@ -3,9 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Support Daxter Design</title>
+<title>Contact Daxter Design</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
 <header class="site-header">
@@ -19,8 +20,8 @@
         <li><a href="videos.html">Videos</a></li>
         <li><a href="shop.html">Sticker Shop</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="support.html" class="active">Support</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+        <li><a href="support.html">Support</a></li>
       </ul>
       <button class="nav-toggle"></button>
     </nav>
@@ -30,18 +31,33 @@
 <main>
 
   <section class="page-hero">
-    <h1>Support Daxter Design</h1>
-    <p>Your support helps keep the art, animations, and stickers coming.</p>
+    <h1>Contact Daxter Design</h1>
+    <p>Have a question, request, or just want to say hi? Send me a message.</p>
   </section>
 
   <section>
     <div class="container">
-      <div class="form-card text-center">
-        <h2>Ko‑fi Donations</h2>
-        <p>Every donation helps Daxter continue creating art, animations, and new sticker designs.</p>
-        <a href="https://ko-fi.com/daxterstudio" target="_blank" class="btn btn-primary">
-          Support on Ko‑fi
-        </a>
+      <div class="form-card">
+
+        <form action="https://formsubmit.co/ulimoratech@gmail.com" method="POST">
+
+          <input type="hidden" name="_captcha" value="false">
+
+          <label>Name</label>
+          <input type="text" name="name" required class="input-field">
+
+          <label>Email</label>
+          <input type="email" name="email" required class="input-field">
+
+          <label>Message</label>
+          <textarea name="message" required class="textarea-field"></textarea>
+
+          <button type="submit" class="btn btn-primary" style="margin-top: 12px;">
+            Send Message
+          </button>
+
+        </form>
+
       </div>
     </div>
   </section>

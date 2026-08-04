@@ -21,14 +21,14 @@ const DEFAULT_VIDEOS = [
      title: "No Debí Quedarme a Dormir Aquí...",
     description: "Based on true facts.",
     url: "https://www.youtube.com/watch?v=rSP5WbecvGU",
-    thumb: "https://img.youtube.com/vi/rSP5WbecvGU/maxresdefault.jpg",
+    thumb: "https://img.youtube.com/vi/rSP5WbecvGU/hqdefault.jpg",
     featured: true
   },
   {
     title: "MI PEOR CONSULTA MEDICA",
     description: "My first YouTube video.",
     url: "https://www.youtube.com/watch?v=dCa6IOSAIt4",
-    thumb: "https://img.youtube.com/vi/dCa6IOSAIt4/maxresdefault.jpg",
+    thumb: "https://img.youtube.com/vi/dCa6IOSAIt4/hqdefault.jpg",
     featured: true
   }
 ];

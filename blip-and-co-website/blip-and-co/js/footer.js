@@ -35,6 +35,6 @@ document.getElementById("footer").innerHTML = `
 
   <div class="footer-bottom">
     <span>© 2026 Daxter Design</span>
-    <span>Made with love and stickers</span>
+    <span>Made with love, you know</span>
   </div>
 `;

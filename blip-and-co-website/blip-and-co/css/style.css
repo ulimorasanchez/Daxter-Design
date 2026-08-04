@@ -324,4 +324,14 @@ section{ position: relative; z-index: 1; }
 /* ===================== FOOTER ===================== */
 .site-footer{ margin-top: 90px; background: var(--ink); color: #D8CFEE; padding: 56px 0 26px; }
 .footer-grid{ display:grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 34px; }
-.footer
+
+/* ===================== BRAND ICON ===================== */
+.brand-icon {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+

@@ -65,7 +65,10 @@
   if(featured){
     document.getElementById("featuredVideo").innerHTML = `
       <div class="video-card">
-        <div class="thumb">${sceneArt(featured.thumb)}</div>
+        <div class="thumb">
+  <img src="${v.thumb}" alt="${v.title}">
+</div>
+
         <h3>${featured.title}</h3>
         <p class="desc">${featured.description}</p>
         <div class="video-meta">

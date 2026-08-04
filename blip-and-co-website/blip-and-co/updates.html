@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Daxter Design — Updates</title>
+<title>Support Daxter Design</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -19,8 +19,8 @@
         <li><a href="videos.html">Videos</a></li>
         <li><a href="shop.html">Sticker Shop</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="updates.html" class="active">Updates</a></li>
-        <li><a href="support.html">Support</a></li>
+        <li><a href="updates.html">Updates</a></li>
+        <li><a href="support.html" class="active">Support</a></li>
       </ul>
       <button class="nav-toggle"></button>
     </nav>
@@ -30,41 +30,27 @@
 <main>
 
   <section class="page-hero">
-    <h1>Updates</h1>
-    <p>New stickers, new videos, behind‑the‑scenes posts, and design announcements.</p>
+    <h1>Support Daxter Design</h1>
+    <p>Your support helps keep the art, animations, and stickers coming.</p>
   </section>
 
   <section>
-    <div class="container grid-4" id="updatesGrid"></div>
+    <div class="container">
+      <div class="form-card text-center">
+        <h2>Ko‑fi Donations</h2>
+        <p>Every donation helps Daxter continue creating art, animations, and new sticker designs.</p>
+        <a href="https://ko-fi.com/daxterstudio" target="_blank" class="btn btn-primary">
+          Support on Ko‑fi
+        </a>
+      </div>
+    </div>
   </section>
 
 </main>
 
 <footer class="site-footer" id="footer"></footer>
 
-<script src="js/data.js"></script>
-<script src="js/main.js"></script>
 <script src="js/footer.js"></script>
-
-<script>
-  const grid = document.getElementById("updatesGrid");
-
-  DEFAULT_UPDATES.forEach(u => {
-    grid.innerHTML += `
-      <div class="post-card">
-        <div class="thumb">
-          <img src="${u.img}" alt="${u.title}">
-        </div>
-        <h3>${u.title}</h3>
-        <p class="desc">${u.excerpt}</p>
-        <div class="row">
-          <span class="badge">${u.type}</span>
-          <span class="video-meta">${timeAgo(u.date)}</span>
-        </div>
-      </div>
-    `;
-  });
-</script>
 
 </body>
 </html>

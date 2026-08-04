@@ -50,7 +50,10 @@
   DEFAULT_VIDEOS.forEach(v => {
     grid.innerHTML += `
       <div class="video-card">
-        <div class="thumb">${sceneArt(v.thumb)}</div>
+        <div class="thumb">
+  <img src="${v.thumb}" alt="${v.title}">
+</div>
+
         <h3>${v.title}</h3>
         <p class="desc">${v.description}</p>
         <div class="video-meta">

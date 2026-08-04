@@ -1,5 +1,5 @@
 /* ===========================================================
-   DAXTER DESIGN — Purple + Black Aesthetic (Full Rewrite)
+   DAXTER DESIGN — Smooth Purple Gradient Theme (Full Rewrite)
    Clean, optimized, modern CSS architecture
 =========================================================== */
 
@@ -10,20 +10,18 @@
 =========================================================== */
 :root{
   /* Core Colors */
-  --black:        #0D0D0D;
-  --black-soft:   #1A1A1A;
-  --black-glass:  rgba(0,0,0,0.55);
+  --purple-1: #A06BFF;
+  --purple-2: #7A4DCC;
+  --purple-3: #CFA8FF;
+  --purple-4: #3A1F5D;
 
-  --purple:       #A06BFF;
-  --purple-light: #D9C2FF;
-  --purple-dark:  #7A4DCC;
+  --white: #FFFFFF;
+  --gray-soft: #CFC6E8;
+  --gray-dark: #1E1A29;
 
-  --white:        #FFFFFF;
-  --gray-soft:    #6E5D93;
-
-  --yellow:       #FFC93C; /* optional accent */
-  --mint:         #3DDC97;
-  --sky:          #4CC9F0;
+  --yellow: #FFC93C;
+  --mint: #3DDC97;
+  --sky: #4CC9F0;
 
   /* Radii */
   --radius-lg: 28px;
@@ -36,7 +34,11 @@
   --shadow-soft-lg: 0 24px 48px rgba(160,107,255,0.3), 0 6px 16px rgba(0,0,0,0.2);
 
   /* Gradients */
-  --grad-brand: linear-gradient(135deg, #000 0%, #2B1B4D 40%, #A06BFF 100%);
+  --grad-bg: linear-gradient(135deg, #1E1A29 0%, #3A1F5D 40%, #A06BFF 100%);
+  --grad-card: linear-gradient(145deg, #2A1F3D, #3A1F5D);
+  --grad-button: linear-gradient(135deg, #7A4DCC, #A06BFF);
+  --grad-nav: linear-gradient(135deg, #1E1A29, #3A1F5D);
+  --grad-news: linear-gradient(135deg, #3A1F5D, #A06BFF);
 
   /* Fonts */
   --font-display: 'Baloo 2', ui-rounded, system-ui, sans-serif;
@@ -55,7 +57,7 @@
 html{ scroll-behavior: smooth; }
 body{
   margin: 0;
-  background: var(--black);
+  background: var(--grad-bg);
   color: var(--white);
   font-family: var(--font-body);
   font-size: 16px;
@@ -69,7 +71,7 @@ body::before{
   position: fixed; inset: 0;
   pointer-events: none;
   z-index: 0;
-  background-image: radial-gradient(circle, rgba(160,107,255,0.055) 1.5px, transparent 1.5px);
+  background-image: radial-gradient(circle, rgba(255,255,255,0.08) 1.5px, transparent 1.5px);
   background-size: 26px 26px;
 }
 
@@ -91,16 +93,6 @@ body::before{
   to{ opacity: 1; transform: translateY(0) scale(1); }
 }
 .sticker-card, .post-card{ animation: fadeInUp .55s var(--ease-smooth) both; }
-
-/* Confetti */
-.confetti-piece{
-  position: fixed; z-index: 300; border-radius: 3px; pointer-events: none;
-  animation: confettiPop .8s ease-out forwards;
-}
-@keyframes confettiPop{
-  0%{ transform: translate(0,0) rotate(0deg) scale(1); opacity: 1; }
-  100%{ transform: translate(var(--dx), var(--dy)) rotate(var(--rot2)); opacity: 0; }
-}
 
 /* Typography */
 h1,h2,h3,h4{
@@ -133,19 +125,19 @@ section{ position: relative; z-index: 1; }
   font-size: 16px;
   padding: 14px 28px;
   border-radius: 999px;
-  border: 3px solid var(--purple);
-  background: var(--purple);
+  border: 3px solid var(--purple-1);
+  background: var(--grad-button);
   color: var(--white);
-  box-shadow: 4px 4px 0 var(--black-soft);
+  box-shadow: 4px 4px 0 rgba(0,0,0,0.25);
   transition: transform .2s var(--ease-bounce), box-shadow .2s var(--ease-bounce), filter .2s ease;
   white-space: nowrap;
 }
-.btn:hover{ transform: translate(-2px,-3px) rotate(-1deg); box-shadow: 6px 7px 0 var(--black-soft); filter: brightness(1.08); }
-.btn:active{ transform: translate(1px,1px); box-shadow: 2px 2px 0 var(--black-soft); }
+.btn:hover{ transform: translate(-2px,-3px) rotate(-1deg); box-shadow: 6px 7px 0 rgba(0,0,0,0.35); filter: brightness(1.08); }
+.btn:active{ transform: translate(1px,1px); box-shadow: 2px 2px 0 rgba(0,0,0,0.35); }
 
-.btn-ghost{ background: transparent; border-color: var(--purple); color: var(--purple); }
+.btn-ghost{ background: transparent; border-color: var(--purple-1); color: var(--purple-1); }
 .btn-block{ width:100%; }
-.btn-sm{ padding: 9px 18px; font-size: 14px; box-shadow: 3px 3px 0 var(--black-soft); border-width:2px; }
+.btn-sm{ padding: 9px 18px; font-size: 14px; box-shadow: 3px 3px 0 rgba(0,0,0,0.25); border-width:2px; }
 
 /* ===========================================================
    NAVIGATION
@@ -160,9 +152,8 @@ section{ position: relative; z-index: 1; }
   margin: 0 auto;
   display:flex; align-items:center; justify-content:space-between;
   gap: 12px;
-  background: var(--black-glass);
-  backdrop-filter: blur(14px) saturate(1.4);
-  border: 3px solid var(--purple);
+  background: var(--grad-nav);
+  border: 3px solid var(--purple-1);
   border-radius: 999px;
   padding: 10px 12px 10px 20px;
   box-shadow: var(--shadow-soft);
@@ -190,14 +181,14 @@ section{ position: relative; z-index: 1; }
 }
 
 .nav-links a:hover{
-  background: var(--purple-dark);
+  background: var(--purple-2);
   color: var(--white);
   transform: translateY(-1px);
 }
 
 .nav-links a.active{
-  background: var(--purple);
-  color: var(--black);
+  background: var(--purple-1);
+  color: var(--gray-dark);
 }
 
 .nav-toggle{ display:none; }
@@ -208,15 +199,15 @@ section{ position: relative; z-index: 1; }
   .nav-toggle{
     display:flex; align-items:center; justify-content:center;
     width:44px; height:44px; border-radius:50%;
-    border:3px solid var(--purple); background: var(--black-soft);
+    border:3px solid var(--purple-1); background: var(--purple-4);
   }
   .nav-links.open{
     display:flex; flex-direction:column;
     position:absolute; top: 76px; left:24px; right:24px;
-    background: var(--black);
-    border:3px solid var(--purple);
+    background: var(--grad-card);
+    border:3px solid var(--purple-1);
     border-radius: var(--radius-md); padding: 10px;
-    box-shadow: 5px 5px 0 var(--purple-dark);
+    box-shadow: 5px 5px 0 var(--purple-2);
     z-index: 60;
   }
 }
@@ -227,8 +218,8 @@ section{ position: relative; z-index: 1; }
 .sticker-card{
   --rot: -2deg;
   position: relative;
-  background: var(--black-soft);
-  border: 3px solid var(--purple);
+  background: var(--grad-card);
+  border: 3px solid var(--purple-1);
   border-radius: var(--radius-md);
   padding: 16px;
   transform: rotate(var(--rot));
@@ -249,14 +240,14 @@ section{ position: relative; z-index: 1; }
   content:"";
   position:absolute; inset: 6px;
   border-radius: calc(var(--radius-md) - 6px);
-  border: 2px dashed rgba(160,107,255,0.25);
+  border: 2px dashed rgba(255,255,255,0.25);
   pointer-events:none;
 }
 
 .sticker-thumb{
   position:relative; border-radius: var(--radius-sm); overflow:hidden;
-  background: var(--black);
-  border: 2px solid var(--purple);
+  background: var(--purple-4);
+  border: 2px solid var(--purple-1);
   aspect-ratio: 1/1; display:flex; align-items:center; justify-content:center; margin-bottom:12px;
 }
 
@@ -324,7 +315,8 @@ section{ position: relative; z-index: 1; }
 =========================================================== */
 .video-card .thumb{
   position:relative; border-radius: var(--radius-sm); overflow:hidden;
-  border: 2px solid var(--purple); aspect-ratio: 16/10; margin-bottom:12px;
+  border: 2px solid var(--purple-1); aspect-ratio: 16/10; margin-bottom:12px;
+  background: var(--grad-card);
 }
 
 .video-card .thumb img{
@@ -336,8 +328,8 @@ section{ position: relative; z-index: 1; }
 .platform-chip{
   position:absolute; bottom:8px; left:8px;
   display:flex; align-items:center; gap:6px;
-  background: var(--black);
-  border:2px solid var(--purple);
+  background: var(--purple-4);
+  border:2px solid var(--purple-1);
   border-radius: 999px; padding: 4px 10px 4px 4px;
   font-family: var(--font-mono); font-size:11px; font-weight:700;
   box-shadow: var(--shadow-soft);
@@ -362,7 +354,7 @@ section{ position: relative; z-index: 1; }
 
 .timeline{
   position:relative; padding-left: 30px;
-  border-left: 3px dashed var(--purple);
+  border-left: 3px dashed var(--purple-1);
 }
 
 .timeline-item{ position:relative; margin-bottom: 32px; }
@@ -370,7 +362,7 @@ section{ position: relative; z-index: 1; }
 .timeline-item::before{
   content:""; position:absolute; left:-38px; top:2px;
   width:16px; height:16px; border-radius:50%;
-  background: var(--purple);
+  background: var(--purple-1);
   border:3px solid var(--white);
 }
 
@@ -379,16 +371,16 @@ section{ position: relative; z-index: 1; }
 =========================================================== */
 .post-card{
   display:grid; grid-template-columns: 200px 1fr; gap:22px;
-  background: var(--black-soft);
-  border: 3px solid var(--purple);
+  background: var(--grad-card);
+  border: 3px solid var(--purple-1);
   border-radius: var(--radius-md);
   padding: 16px;
 }
 
 .post-card .badge{
   display:inline-block; font-family: var(--font-mono); font-size:11px; font-weight:700;
-  padding:4px 10px; border-radius:999px; border:2px solid var(--purple); margin-bottom:8px;
-  background: var(--purple-dark); color: var(--white);
+  padding:4px 10px; border-radius:999px; border:2px solid var(--purple-1); margin-bottom:8px;
+  background: var(--purple-2); color: var(--white);
 }
 
 @media (max-width: 700px){
@@ -400,7 +392,7 @@ section{ position: relative; z-index: 1; }
    NEWSLETTER
 =========================================================== */
 .newsletter{
-  background: var(--grad-brand);
+  background: var(--grad-news);
   border-radius: var(--radius-lg); padding: 46px; text-align:center; color: var(--white);
   position: relative; overflow:hidden;
   box-shadow: var(--shadow-soft-lg);
@@ -415,8 +407,8 @@ section{ position: relative; z-index: 1; }
 
 .newsletter input[type=email]{
   flex:1; min-width:220px; padding: 14px 18px;
-  border-radius:999px; border:3px solid var(--purple);
-  font-size:15px; background: var(--black-soft); color: var(--white);
+  border-radius:999px; border:3px solid var(--purple-1);
+  font-size:15px; background: var(--purple-4); color: var(--white);
 }
 
 /* ===========================================================

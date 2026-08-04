@@ -9,22 +9,22 @@ document.getElementById("footer").innerHTML = `
     <div class="footer-social">
 
       <a href="https://www.tiktok.com/@daxterstudio" target="_blank" class="social-link">
-        <img src="assets/icons/tiktok.svg" alt="TikTok">
+        <img src="img/tiktok.svg" alt="TikTok">
         <span>@daxterstudio</span>
       </a>
 
       <a href="https://www.youtube.com/@DaxterAStudio" target="_blank" class="social-link">
-        <img src="assets/icons/youtube.svg" alt="YouTube">
+        <img src="img/youtube.svg" alt="YouTube">
         <span>@DaxterAStudio</span>
       </a>
 
       <a href="https://www.instagram.com/daxterstudio/" target="_blank" class="social-link">
-        <img src="assets/icons/instagram.svg" alt="Instagram">
+        <img src="img/instagram.svg" alt="Instagram">
         <span>@daxterstudio</span>
       </a>
 
       <a href="https://www.etsy.com/shop/DaxterDesigns" target="_blank" class="social-link">
-        <img src="assets/icons/etsy.svg" alt="Etsy">
+        <img src="img/etsy.svg" alt="Etsy">
         <span>DaxterDesigns</span>
       </a>
 

@@ -22,7 +22,6 @@ const DEFAULT_VIDEOS = [
     description: "My first YouTube video.",
     url: "https://www.youtube.com/watch?v=dCa6IOSAIt4",
     thumb: "https://img.youtube.com/vi/dCa6IOSAIt4/maxresdefault.jpg",
-    views: 0,
     featured: true
   },
   {
@@ -30,7 +29,6 @@ const DEFAULT_VIDEOS = [
     description: "Based on true facts.",
     url: "https://www.youtube.com/watch?v=rSP5WbecvGU",
     thumb: "https://img.youtube.com/vi/rSP5WbecvGU/maxresdefault.jpg",
-    views: 0,
     featured: true
   }
 ];

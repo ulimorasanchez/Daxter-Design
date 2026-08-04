@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About — Daxter Design</title>
-<meta name="description" content="Learn about Daxter Design — art, animation, stickers, and creative projects.">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -13,7 +12,7 @@
   <div class="container">
     <nav class="nav-pill">
       <a href="index.html" class="brand">
-        <span class="blob" id="brandBlob"></span> Daxter Design
+        <img src="img/daxterlogo.jpg" class="brand-icon"> Daxter Design
       </a>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
@@ -23,7 +22,7 @@
         <li><a href="updates.html">Updates</a></li>
         <li><a href="support.html">Support</a></li>
       </ul>
-      <button class="nav-toggle" aria-label="Menu"></button>
+      <button class="nav-toggle"></button>
     </nav>
   </div>
 </header>
@@ -39,56 +38,10 @@
     <div class="container about-hero">
       <div>
         <h2>The Artist Behind the Design</h2>
-        <p>Daxter Design is a creative space built around art, animation, and character design. From cute creatures to stylized fan art, every piece is crafted with personality and charm.</p>
-        <p>The brand produces animations, stickers, and digital art — shared across YouTube, Instagram, TikTok, and Etsy.</p>
+        <p>Daxter Design is a creative space built around art, animation, and character design.</p>
       </div>
-      <div class="blob-wrap wobble" id="aboutBlob"></div>
-    </div>
-  </section>
-
-  <section>
-    <div class="container">
-      <h2>Origin Story</h2>
-      <div class="timeline">
-
-        <div class="timeline-item">
-          <h3>Early Art</h3>
-          <p>What started as simple sketches evolved into full characters, animations, and a growing online presence.</p>
-        </div>
-
-        <div class="timeline-item">
-          <h3>Growing the Brand</h3>
-          <p>As the audience expanded, so did the projects — stickers, videos, and creative collaborations.</p>
-        </div>
-
-        <div class="timeline-item">
-          <h3>Today</h3>
-          <p>Daxter Design continues to grow across YouTube, Etsy, Instagram, TikTok, and Ko‑fi, sharing art with fans worldwide.</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="container">
-      <h2>Say Hi</h2>
-      <div class="form-card" id="contact">
-        <form id="contactForm">
-          <div class="form-field">
-            <label>Your name</label>
-            <input type="text" required>
-          </div>
-          <div class="form-field">
-            <label>Your email</label>
-            <input type="email" required>
-          </div>
-          <div class="form-field">
-            <label>Message</label>
-            <textarea rows="5" required></textarea>
-          </div>
-          <button class="btn btn-primary btn-block">Send message</button>
-        </form>
+      <div class="blob-wrap wobble">
+        <img src="img/daxterlogo.jpg" class="brand-icon">
       </div>
     </div>
   </section>
@@ -97,20 +50,7 @@
 
 <footer class="site-footer" id="footer"></footer>
 
-<script src="js/data.js"></script>
-<script src="js/main.js"></script>
 <script src="js/footer.js"></script>
-
-<script>
-  document.getElementById("brandBlob").innerHTML = heroBlip();
-  document.getElementById("aboutBlob").innerHTML = heroBlip();
-
-  document.getElementById("contactForm").addEventListener("submit", e => {
-    e.preventDefault();
-    showToast("Message sent! 📬");
-    e.target.reset();
-  });
-</script>
 
 </body>
 </html>

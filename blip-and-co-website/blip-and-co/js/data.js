@@ -16,74 +16,25 @@
 
 /* ---------------- VIDEOS ---------------- */
 /* platform: "youtube" | "tiktok" | "instagram"                         */
-const VIDEOS = [
+const DEFAULT_VIDEOS = [
   {
-    id: "v001",
-    title: "Blip vs. The Vending Machine",
-    description: "Blip wants a snack. The vending machine has other plans. A three-minute war of wills ensues.",
-    platform: "youtube",
-    thumb: "blob-vend",
-    url: "https://youtube.com/@blipandco",
-    date: "2026-07-08",
-    views: 184000,
+    title: "MI PEOR CONSULTA MEDICA",
+    description: "My first YouTube video.",
+    url: "https://www.youtube.com/watch?v=dCa6IOSAIt4",
+    thumb: "https://img.youtube.com/vi/dCa6IOSAIt4/maxresdefault.jpg",
+    views: 0,
     featured: true
   },
   {
-    id: "v002",
-    title: "Doodle Learns to Skateboard",
-    description: "It does not go well. It goes wonderfully.",
-    platform: "tiktok",
-    thumb: "blob-skate",
-    url: "https://tiktok.com/@blipandco",
-    date: "2026-07-03",
-    views: 921000,
-    featured: false
-  },
-  {
-    id: "v003",
-    title: "Nib's 5-Second Nap",
-    description: "A day in the life of the sleepiest bird-cat in the crew.",
-    platform: "instagram",
-    thumb: "blob-nap",
-    url: "https://instagram.com/blipandco",
-    date: "2026-06-29",
-    views: 402000,
-    featured: false
-  },
-  {
-    id: "v004",
-    title: "The Great Sticker Heist",
-    description: "Blip discovers the sticker sheet is missing one (1) sticker. Chaos follows.",
-    platform: "youtube",
-    thumb: "blob-heist",
-    url: "https://youtube.com/@blipandco",
-    date: "2026-06-21",
-    views: 276000,
-    featured: false
-  },
-  {
-    id: "v005",
-    title: "Rainy Day Energy",
-    description: "A quiet, cozy short about puddles, umbrellas, and one very determined blob.",
-    platform: "instagram",
-    thumb: "blob-rain",
-    url: "https://instagram.com/blipandco",
-    date: "2026-06-14",
-    views: 158000,
-    featured: false
-  },
-  {
-    id: "v006",
-    title: "Doodle vs. Gravity",
-    description: "Doodle discovers stairs. Round two of an ongoing rivalry.",
-    platform: "tiktok",
-    thumb: "blob-stairs",
-    url: "https://tiktok.com/@blipandco",
-    date: "2026-06-07",
-    views: 640000,
-    featured: false
+    title: "No Debí Quedarme a Dormir Aquí...",
+    description: "Based on true facts.",
+    url: "https://www.youtube.com/watch?v=rSP5WbecvGU",
+    thumb: "https://img.youtube.com/vi/rSP5WbecvGU/maxresdefault.jpg",
+    views: 0,
+    featured: true
   }
 ];
+
 
 /* ---------------- STICKERS ---------------- */
 /* category: "blip" | "doodle" | "nib" | "duo" | "seasonal"             */

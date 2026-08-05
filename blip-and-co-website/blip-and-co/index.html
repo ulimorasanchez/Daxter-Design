@@ -49,6 +49,32 @@
     <div class="container">
       <div class="section-head"><h2>Featured Video</h2></div>
       <div id="featuredVideo"></div>
+
+      <!-- ⭐ FEATURED STICKERS SECTION -->
+      <div class="section-head"><h2>Featured Stickers</h2></div>
+
+      <div class="sticker-gallery">
+        <div class="sticker-slider">
+
+          <!-- Sticker 1 -->
+          <a href="https://www.etsy.com/listing/your-product-1" target="_blank">
+            <img src="https://i.etsystatic.com/38936010/r/il/0f4e8d/7273879187/il_1140xN.7273879187_7tv4.jpg" alt="Sticker 1">
+          </a>
+
+          <!-- Sticker 2 -->
+          <a href="https://www.etsy.com/listing/your-product-2" target="_blank">
+            <img src="https://i.etsystatic.com/38936010/r/il/0f4e8d/7273879187/il_1140xN.7273879187_7tv4.jpg" alt="Sticker 2">
+          </a>
+
+          <!-- Sticker 3 -->
+          <a href="https://www.etsy.com/listing/your-product-3" target="_blank">
+            <img src="https://i.etsystatic.com/38936010/r/il/0f4e8d/7273879187/il_1140xN.7273879187_7tv4.jpg" alt="Sticker 3">
+          </a>
+
+        </div>
+      </div>
+      <!-- END STICKER SECTION -->
+
     </div>
   </section>
 
@@ -59,6 +85,7 @@
 <script src="js/data.js"></script>
 <script src="js/main.js"></script>
 <script src="js/footer.js"></script>
+
 <script>
   const featured = DEFAULT_VIDEOS.find(v => v.featured);
   if (featured) {
@@ -77,6 +104,21 @@
   }
 </script>
 
+<!-- ⭐ AUTO-SLIDE STICKER JS -->
+<script>
+  const slider = document.querySelector('.sticker-slider');
+  const stickers = document.querySelectorAll('.sticker-slider a');
+  let index = 0;
+
+  function slideStickers() {
+    index++;
+    if (index >= stickers.length) index = 0;
+    slider.style.transform = `translateX(-${index * 100}%)`;
+  }
+
+  setInterval(slideStickers, 3000);
+</script>
 
 </body>
 </html>
+

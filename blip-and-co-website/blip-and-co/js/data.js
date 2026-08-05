@@ -66,6 +66,37 @@ const STICKERS = [
     name: "Gengar-inspired hard enamel pin",
     img: "https://i.etsystatic.com/38936010/r/il/4cc95d/7567298147/il_600x600.7567298147_co08.jpg",
     etsy: "https://www.etsy.com/listing/4426484144/gengar-inspired-hard-enamel-pin"
+  },
+    {
+    id: "dax006",
+    name: "Eevee Gang Stickers",
+    img: "https://i.etsystatic.com/38936010/r/il/ed1b63/7108424533/il_794xN.7108424533_t4qz.jpg",
+    etsy: "https://www.etsy.com/listing/4342811215/eevee-gang-stickers"
+  },
+
+{
+    id: "dax007",
+    name: "Fnaf Inspired Pushies Stickers",
+    img: "https://i.etsystatic.com/38936010/r/il/58d9f4/7564931878/il_794xN.7564931878_jiou.jpg",
+    etsy: "https://www.etsy.com/listing/4435190882/fnaf-inspired-pushies-stickers"
+  },
+   {
+    id: "dax008",
+    name: "Totodile Sticker",
+    img: "https://i.etsystatic.com/38936010/r/il/ff29b6/7313672035/il_794xN.7313672035_3ovk.jpg",
+    etsy: "https://www.etsy.com/listing/4383082385/totodile-sticker"
+  },
+   {
+    id: "dax009",
+    name: "Mudkip Lovers Stickers",
+    img: "https://i.etsystatic.com/38936010/r/il/f58ab2/7674142106/il_794xN.7674142106_kn3f.jpg",
+    etsy: "https://www.etsy.com/listing/4452235025/mudkip-lovers-stickers"
+  },
+   {
+    id: "dax0010",
+    name: "Kirby Stickers",
+    img: "https://i.etsystatic.com/38936010/r/il/d600ec/5162622436/il_794xN.5162622436_57r5.jpg",
+    etsy: "https://www.etsy.com/listing/1525094540/kirby-stickers"
   }
 ];
 

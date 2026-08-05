@@ -517,7 +517,7 @@ sticker gallery
 =========================================================== */
 .sticker-gallery {
   width: 100%;
-  max-width: 260px; /* smaller */
+  max-width: 240px;
   margin: 30px auto;
   text-align: center;
 }
@@ -537,10 +537,10 @@ sticker gallery
 }
 
 .sticker-slide img {
-  width: 200px;   /* smaller image */
+  width: 200px;
   height: auto;
-  cursor: pointer;
   border-radius: 10px;
+  cursor: pointer;
 }
 
 .sticker-controls {

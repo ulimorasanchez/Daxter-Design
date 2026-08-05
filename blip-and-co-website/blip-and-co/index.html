@@ -50,27 +50,35 @@
       <div class="section-head"><h2>Featured Video</h2></div>
       <div id="featuredVideo"></div>
 
-      <!-- ⭐ FEATURED STICKERS SECTION -->
-      <div class="section-head"><h2>Featured Stickers</h2></div>
+      <!-- ⭐ BEST SELLER STICKERS SECTION -->
+      <div class="section-head"><h2>Best Seller Stickers</h2></div>
 
       <div class="sticker-gallery">
         <div class="sticker-slider">
 
-          <!-- Sticker 1 -->
-          <a href="https://www.etsy.com/listing/your-product-1" target="_blank">
-            <img src="https://i.etsystatic.com/38936010/r/il/0f4e8d/7273879187/il_1140xN.7273879187_7tv4.jpg" alt="Sticker 1">
-          </a>
+          <div class="sticker-slide">
+            <a href="https://www.etsy.com/listing/your-product-1" target="_blank">
+              <img src="https://i.etsystatic.com/38936010/r/il/0f4e8d/7273879187/il_1140xN.7273879187_7tv4.jpg" alt="Sticker 1">
+            </a>
+          </div>
 
-          <!-- Sticker 2 -->
-          <a href="https://www.etsy.com/listing/your-product-2" target="_blank">
-            <img src="https://i.etsystatic.com/38936010/r/il/0f4e8d/7273879187/il_1140xN.7273879187_7tv4.jpg" alt="Sticker 2">
-          </a>
+          <div class="sticker-slide">
+            <a href="https://www.etsy.com/listing/your-product-2" target="_blank">
+              <img src="https://i.etsystatic.com/38936010/r/il/0f4e8d/7273879187/il_1140xN.7273879187_7tv4.jpg" alt="Sticker 2">
+            </a>
+          </div>
 
-          <!-- Sticker 3 -->
-          <a href="https://www.etsy.com/listing/your-product-3" target="_blank">
-            <img src="https://i.etsystatic.com/38936010/r/il/0f4e8d/7273879187/il_1140xN.7273879187_7tv4.jpg" alt="Sticker 3">
-          </a>
+          <div class="sticker-slide">
+            <a href="https://www.etsy.com/listing/your-product-3" target="_blank">
+              <img src="https://i.etsystatic.com/38936010/r/il/0f4e8d/7273879187/il_1140xN.7273879187_7tv4.jpg" alt="Sticker 3">
+            </a>
+          </div>
 
+        </div>
+
+        <div class="sticker-controls">
+          <button id="prevSticker" class="btn btn-sm btn-ghost">Prev</button>
+          <button id="nextSticker" class="btn btn-sm btn-primary">Next</button>
         </div>
       </div>
       <!-- END STICKER SECTION -->
@@ -104,21 +112,57 @@
   }
 </script>
 
-<!-- ⭐ AUTO-SLIDE STICKER JS -->
+<!-- ⭐ STICKER SLIDER LOGIC -->
 <script>
   const slider = document.querySelector('.sticker-slider');
-  const stickers = document.querySelectorAll('.sticker-slider a');
-  let index = 0;
+  const slides = document.querySelectorAll('.sticker-slide');
+  const prevBtn = document.getElementById('prevSticker');
+  const nextBtn = document.getElementById('nextSticker');
 
-  function slideStickers() {
-    index++;
-    if (index >= stickers.length) index = 0;
-    slider.style.transform = `translateX(-${index * 100}%)`;
+  let currentIndex = 0;
+  let autoTimer = null;
+
+  function showSlide(index) {
+    if (!slider || slides.length === 0) return;
+
+    if (index < 0) index = slides.length - 1;
+    if (index >= slides.length) index = 0;
+
+    currentIndex = index;
+    slider.style.transform = `translateX(-${currentIndex * 100}%)`;
   }
 
-  setInterval(slideStickers, 3000);
+  function nextSlide() {
+    showSlide(currentIndex + 1);
+  }
+
+  function prevSlide() {
+    showSlide(currentIndex - 1);
+  }
+
+  function startAutoSlide() {
+    if (autoTimer) clearInterval(autoTimer);
+    autoTimer = setInterval(nextSlide, 4000); // 4 seconds
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      nextSlide();
+      startAutoSlide();
+    });
+  }
+
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      prevSlide();
+      startAutoSlide();
+    });
+  }
+
+  // init
+  showSlide(0);
+  startAutoSlide();
 </script>
 
 </body>
 </html>
-

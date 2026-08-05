@@ -517,20 +517,37 @@ sticker gallery
 =========================================================== */
 .sticker-gallery {
   width: 100%;
-  max-width: 400px;
+  max-width: 260px; /* smaller */
   margin: 30px auto;
-  overflow: hidden;
+  text-align: center;
 }
 
 .sticker-slider {
   display: flex;
-  transition: transform 0.5s ease-in-out;
+  width: 100%;
+  overflow: hidden;
+  transition: transform 0.4s ease-in-out;
 }
 
-.sticker-slider img {
-  width: 100%;
+.sticker-slide {
+  min-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sticker-slide img {
+  width: 200px;   /* smaller image */
   height: auto;
   cursor: pointer;
   border-radius: 10px;
 }
+
+.sticker-controls {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
 

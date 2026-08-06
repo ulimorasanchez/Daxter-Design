@@ -47,20 +47,20 @@
 <script src="js/footer.js"></script>
 <script>
   const videoGrid = document.getElementById("videoGrid");
-  window.DEFAULT_VIDEOS.forEach(v => {
-    videoGrid.innerHTML += `
-      <div class="video-card">
-        <div class="thumb">
-          <img src="${v.thumb}" alt="${v.title}">
-        </div>
-        <h3>${v.title}</h3>
-        <p class="desc">${v.description}</p>
-        <div class="video-meta">
-          <a href="${v.url}" target="_blank" class="btn btn-sm btn-primary">Watch</a>
-        </div>
+
+window.DEFAULT_VIDEOS.forEach(v => {
+  videoGrid.innerHTML += `
+    <div class="video-card">
+      <div class="thumb">
+        <img src="${v.thumb}" alt="${v.title}">
       </div>
-    `;
-  });
+      <h3>${v.title}</h3>
+      <p class="desc">${v.description}</p>
+      <a href="${v.url}" target="_blank" class="btn btn-sm btn-primary">Watch</a>
+    </div>
+  `;
+});
+
 </script>
 
 </body>

@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <title>Daxter Design — Art & Animation</title>
 <link rel="stylesheet" href="css/style.css">
+
 <style>
 
 /* Prevent blank spaces */
@@ -14,52 +15,72 @@ html, body {
   overflow-x: hidden;
 }
 
-/* Mobile hamburger menu */
-.nav-toggle {
-  width: 40px;
-  height: 40px;
-  background: transparent;
-  border: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-}
-
-.menu-icon {
-  width: 24px;
-  height: 2px;
-  background: #fff;
-  position: relative;
-}
-
-.menu-icon::before,
-.menu-icon::after {
-  content: "";
-  width: 24px;
-  height: 2px;
-  background: #fff;
-  position: absolute;
-  left: 0;
-}
-
-.menu-icon::before {
-  top: -8px;
-}
-
-.menu-icon::after {
-  top: 8px;
-}
-
-/* Mobile nav open/close */
+/* Desktop nav stays normal */
 .nav-links {
-  display: none;
-  flex-direction: column;
-  gap: 10px;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
 }
 
-.nav-links.open {
-  display: flex;
+/* Hide hamburger on desktop */
+.nav-toggle {
+  display: none;
+}
+
+/* MOBILE ONLY */
+@media (max-width: 768px) {
+
+  /* Show hamburger */
+  .nav-toggle {
+    display: flex;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: none;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  /* Hamburger icon */
+  .menu-icon {
+    width: 24px;
+    height: 2px;
+    background: #fff;
+    position: relative;
+  }
+
+  .menu-icon::before,
+  .menu-icon::after {
+    content: "";
+    width: 24px;
+    height: 2px;
+    background: #fff;
+    position: absolute;
+    left: 0;
+  }
+
+  .menu-icon::before {
+    top: -8px;
+  }
+
+  .menu-icon::after {
+    top: 8px;
+  }
+
+  /* Mobile nav collapsed */
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    background: #222;
+    padding: 15px;
+    border-radius: 10px;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
 }
 
 /* Sticker gallery */
@@ -107,6 +128,7 @@ html, body {
 <header class="site-header">
   <div class="container">
     <nav class="nav-pill">
+
       <a href="index.html" class="brand">
         <img src="img/daxterlogo.jpg" class="brand-icon"> Daxter Design
       </a>
@@ -120,9 +142,11 @@ html, body {
         <li><a href="support.html">Support</a></li>
       </ul>
 
+      <!-- MOBILE ONLY HAMBURGER -->
       <button class="nav-toggle">
         <span class="menu-icon"></span>
       </button>
+
     </nav>
   </div>
 </header>
@@ -147,6 +171,7 @@ html, body {
 
   <section>
     <div class="container">
+
       <div class="section-head"><h2>Featured Video</h2></div>
       <div id="featuredVideo"></div>
 

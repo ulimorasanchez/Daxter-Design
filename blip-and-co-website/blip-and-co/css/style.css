@@ -1,7 +1,7 @@
 /* ===========================================================
-   GLOBAL THEME & RESET
+   GLOBAL RESET & THEME
 =========================================================== */
-@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800;900&family=Space+Mono:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800;900&display=swap');
 
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; overflow-x: hidden; }
@@ -41,7 +41,6 @@ body {
 
   --font-display: 'Baloo 2', ui-rounded, system-ui, sans-serif;
   --font-body: 'Nunito', system-ui, sans-serif;
-  --font-mono: 'Space Mono', monospace;
 }
 
 /* ===========================================================
@@ -87,8 +86,8 @@ body {
 }
 
 .brand-icon {
-  width: 40px;
-  height: 40px;
+  width: 48px;
+  height: 48px;
   object-fit: contain;
 }
 
@@ -131,25 +130,11 @@ body {
     cursor: pointer;
   }
 
-  .menu-icon {
-    width: 24px;
-    height: 2px;
-    background: #fff;
-    position: relative;
+  .nav-toggle svg {
+    width: 28px;
+    height: 28px;
+    stroke: white;
   }
-
-  .menu-icon::before,
-  .menu-icon::after {
-    content: "";
-    width: 24px;
-    height: 2px;
-    background: #fff;
-    position: absolute;
-    left: 0;
-  }
-
-  .menu-icon::before { top: -8px; }
-  .menu-icon::after { top: 8px; }
 
   .nav-links {
     display: none;
@@ -171,7 +156,7 @@ body {
 =========================================================== */
 .page-hero {
   text-align: center;
-  padding: 60px 20px 40px;
+  padding: 70px 20px 40px;
 }
 
 .page-hero h1 {
@@ -216,8 +201,8 @@ body {
 }
 
 .hero-art .brand-icon {
-  width: 120px;
-  height: 120px;
+  width: 140px;
+  height: 140px;
 }
 
 /* ===========================================================
@@ -288,7 +273,7 @@ body {
   border-radius: var(--radius-sm);
   overflow: hidden;
   border: 2px solid var(--purple-1);
-  aspect-ratio: 16/10;
+  aspect-ratio: 16/9;
   margin-bottom: 12px;
 }
 
@@ -485,12 +470,35 @@ body {
 }
 
 /* ===========================================================
+   BACKGROUND BLOBS (ENABLED)
+=========================================================== */
+.bg-blob-field {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.bgb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.35;
+  animation: blobFloat 12s ease-in-out infinite;
+}
+
+@keyframes blobFloat {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-40px); }
+}
+
+/* ===========================================================
    FOOTER
 =========================================================== */
 .site-footer {
   background: linear-gradient(135deg, #2A1F3D 0%, #3A1F5D 60%, #7A4DCC 100%);
-  padding: 24px 0 18px;
-  margin-top: 60px;
+  padding: 40px 0 30px;
+  margin-top: 80px;
   color: var(--white);
 }
 
@@ -516,6 +524,11 @@ body {
   display: flex;
   align-items: center;
   gap: 22px;
+}
+
+.footer-social img {
+  width: 24px;
+  height: 24px;
 }
 
 .social-link {

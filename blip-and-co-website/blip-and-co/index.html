@@ -29,6 +29,8 @@
 </header>
 
 <main>
+
+  <!-- HERO -->
   <section class="hero">
     <div class="container hero-grid">
       <div>
@@ -47,43 +49,35 @@
     </div>
   </section>
 
+  <!-- FEATURED VIDEOS -->
   <section>
-  <div class="container">
-    <div class="section-head">
-      <h2>Featured Videos</h2>
+    <div class="container">
+      <div class="section-head">
+        <h2>Featured Videos</h2>
+      </div>
+      <div id="featuredVideo"></div>
     </div>
-    <div id="featuredVideo"></div>
-  </div>
-</section>
+  </section>
 
-  <section>
-  <div class="container">
-    <div class="section-head">
-      <h2>Featured Stickers</h2>
-    </div>
-
-    <div id="featuredStickerGallery" class="featured-sticker-gallery">
-      <!-- Sticker will be injected here -->
-    </div>
-  </div>
-</section>
-
-
-
+  <!-- NEW FEATURED STICKER GALLERY -->
   <section>
     <div class="container">
       <div class="section-head">
         <h2>Featured Stickers</h2>
       </div>
-      <div class="sticker-gallery">
-        <div class="sticker-slider" id="stickerSlider"></div>
-        <div class="sticker-controls">
-          <button class="btn btn-sm btn-ghost" id="prevSticker">Prev</button>
-          <button class="btn btn-sm btn-ghost" id="nextSticker">Next</button>
+
+      <div class="featured-sticker-gallery-wrapper">
+        <button id="prevFeaturedSticker" class="btn btn-sm btn-ghost">Prev</button>
+
+        <div id="featuredStickerGallery" class="featured-sticker-gallery">
+          <!-- Sticker injected here -->
         </div>
+
+        <button id="nextFeaturedSticker" class="btn btn-sm btn-ghost">Next</button>
       </div>
     </div>
   </section>
+
 </main>
 
 <footer class="site-footer" id="footer"></footer>

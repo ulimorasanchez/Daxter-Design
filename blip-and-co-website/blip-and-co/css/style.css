@@ -385,6 +385,48 @@ body {
   100% { opacity: 0; transform: scale(0.95); }
 }
 
+/* ===========================================================
+   FEATURED STICKER GALLERY (Auto-Rotate + Buttons)
+=========================================================== */
+
+.featured-sticker-gallery-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.featured-sticker-gallery {
+  width: 100%;
+  max-width: 260px;
+  height: 260px;
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.featured-sticker-gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  border: 3px solid var(--purple-1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  animation: fadeSticker 4s linear forwards;
+  cursor: pointer; /* click to open Etsy */
+}
+
+@keyframes fadeSticker {
+  0% { opacity: 0; transform: scale(0.95); }
+  10% { opacity: 1; transform: scale(1); }
+  90% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(0.95); }
+}
+
 
 /* ===========================================================
    STICKER CARDS (Shop Page)

@@ -1,5 +1,5 @@
 /* ===========================================================
-   DAXTER DESIGN — Smooth Purple Gradient Theme (Clean Version)
+   DAXTER DESIGN — Smooth Purple Gradient Theme (Safe Clean)
 =========================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800;900&family=Space+Mono:wght@400;700&display=swap');
@@ -47,19 +47,8 @@ body {
 }
 
 /* ===========================================================
-   TYPOGRAPHY
+   CONTAINER
 =========================================================== */
-h1,h2,h3,h4 {
-  font-family: var(--font-display);
-  font-weight: 700;
-  margin: 0 0 .5em;
-}
-p { margin: 0 0 1em; }
-a { color: inherit; text-decoration: none; }
-img { max-width: 100%; display: block; }
-ul { margin: 0; padding: 0; list-style: none; }
-button { font-family: inherit; cursor: pointer; }
-
 .container {
   max-width: 1180px;
   margin: 0 auto;
@@ -99,10 +88,17 @@ button { font-family: inherit; cursor: pointer; }
   font-size: 22px;
 }
 
+.brand-icon {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+/* Desktop nav */
 .nav-links {
   display: flex;
-  align-items: center;
-  gap: 4px;
+  flex-direction: row;
+  gap: 20px;
 }
 
 .nav-links a {
@@ -124,18 +120,14 @@ button { font-family: inherit; cursor: pointer; }
 }
 
 /* ===========================================================
-   MOBILE NAVIGATION (Minimal Hamburger)
+   MOBILE NAVIGATION
 =========================================================== */
-@media (max-width: 860px) {
-
-  .nav-links {
-    display: none;
-  }
+@media (max-width: 768px) {
 
   .nav-toggle {
     display: flex;
-    width: 44px;
-    height: 44px;
+    width: 40px;
+    height: 40px;
     background: transparent;
     border: none;
     justify-content: center;
@@ -144,41 +136,37 @@ button { font-family: inherit; cursor: pointer; }
   }
 
   .menu-icon {
-    width: 26px;
-    height: 3px;
-    background: var(--white);
-    border-radius: 2px;
+    width: 24px;
+    height: 2px;
+    background: #fff;
     position: relative;
   }
 
   .menu-icon::before,
   .menu-icon::after {
     content: "";
-    width: 26px;
-    height: 3px;
-    background: var(--white);
+    width: 24px;
+    height: 2px;
+    background: #fff;
     position: absolute;
     left: 0;
-    border-radius: 2px;
   }
 
   .menu-icon::before { top: -8px; }
   .menu-icon::after { top: 8px; }
 
-  .nav-links.open {
-    display: flex;
+  .nav-links {
+    display: none;
     flex-direction: column;
     gap: 10px;
     background: var(--grad-card);
-    padding: 16px;
-    border-radius: var(--radius-md);
+    padding: 15px;
+    border-radius: 10px;
     border: 3px solid var(--purple-1);
-    box-shadow: 5px 5px 0 var(--purple-2);
-    position: absolute;
-    top: 76px;
-    left: 24px;
-    right: 24px;
-    z-index: 99;
+  }
+
+  .nav-links.open {
+    display: flex;
   }
 }
 
@@ -203,7 +191,6 @@ button { font-family: inherit; cursor: pointer; }
 .hero-sub {
   font-size: 19px;
   color: var(--gray-soft);
-  max-width: 46ch;
 }
 
 .hero-actions {
@@ -211,6 +198,85 @@ button { font-family: inherit; cursor: pointer; }
   gap: 14px;
   flex-wrap: wrap;
   margin-top: 26px;
+}
+
+.hero-art .brand-icon {
+  width: 120px;
+  height: 120px;
+}
+
+/* ===========================================================
+   BUTTONS
+=========================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  padding: 14px 28px;
+  border-radius: 999px;
+  border: 3px solid var(--purple-1);
+  background: var(--grad-button);
+  color: var(--white);
+  box-shadow: 4px 4px 0 rgba(0,0,0,0.25);
+}
+
+.btn-ghost {
+  background: transparent;
+  border-color: var(--purple-1);
+  color: var(--purple-1);
+}
+
+.btn-sm {
+  padding: 9px 18px;
+  font-size: 14px;
+}
+
+/* ===========================================================
+   SECTION HEADERS
+=========================================================== */
+.section-head h2 {
+  font-family: var(--font-display);
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+/* ===========================================================
+   VIDEO CARD
+=========================================================== */
+.video-card {
+  background: var(--grad-card);
+  border: 3px solid var(--purple-1);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  margin-bottom: 30px;
+}
+
+.video-card .thumb {
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 2px solid var(--purple-1);
+  aspect-ratio: 16/10;
+  margin-bottom: 12px;
+}
+
+.video-card .thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-card h3 {
+  font-size: 19px;
+  margin-bottom: 6px;
+}
+
+.video-card .desc {
+  font-size: 14px;
+  color: var(--gray-soft);
+  margin-bottom: 10px;
 }
 
 /* ===========================================================
@@ -249,66 +315,6 @@ button { font-family: inherit; cursor: pointer; }
   display: flex;
   justify-content: center;
   gap: 10px;
-}
-
-/* ===========================================================
-   STICKER CARD
-=========================================================== */
-.sticker-card {
-  --rot: -2deg;
-  position: relative;
-  background: var(--grad-card);
-  border: 3px solid var(--purple-1);
-  border-radius: var(--radius-md);
-  padding: 16px;
-  transform: rotate(var(--rot));
-  box-shadow: var(--shadow-soft);
-  transition: transform .3s ease, box-shadow .3s ease;
-}
-.sticker-card:nth-child(2n){ --rot: 1.5deg; }
-.sticker-card:nth-child(3n){ --rot: -1deg; }
-.sticker-card:nth-child(4n){ --rot: 2deg; }
-
-.sticker-card:hover {
-  transform: rotate(0deg) translateY(-8px) scale(1.015);
-  box-shadow: var(--shadow-soft);
-  z-index: 2;
-}
-
-.sticker-thumb {
-  position: relative;
-  border-radius: var(--radius-sm);
-  overflow: hidden;
-  background: var(--purple-4);
-  border: 2px solid var(--purple-1);
-  aspect-ratio: 1/1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 12px;
-}
-
-/* ===========================================================
-   VIDEO CARD
-=========================================================== */
-.video-card .thumb {
-  border-radius: var(--radius-sm);
-  overflow: hidden;
-  border: 2px solid var(--purple-1);
-  aspect-ratio: 16/10;
-  margin-bottom: 12px;
-  background: var(--grad-card);
-}
-
-.video-card .thumb img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform .35s ease;
-}
-
-.video-card:hover .thumb img {
-  transform: scale(1.06);
 }
 
 /* ===========================================================

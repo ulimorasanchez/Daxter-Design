@@ -354,6 +354,38 @@ body {
   border-radius: 10px;
 }
 
+
+/* Featured Sticker Gallery */
+.featured-sticker-gallery {
+  width: 100%;
+  max-width: 260px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  height: 260px;
+}
+
+.featured-sticker-gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  border: 3px solid var(--purple-1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  animation: fadeSticker 4s linear forwards;
+}
+
+@keyframes fadeSticker {
+  0% { opacity: 0; transform: scale(0.95); }
+  10% { opacity: 1; transform: scale(1); }
+  90% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(0.95); }
+}
+
+
 /* ===========================================================
    STICKER CARDS (Shop Page)
 =========================================================== */

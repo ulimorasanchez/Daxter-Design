@@ -54,7 +54,7 @@
    GLOBAL RESET
 =========================================================== */
 *, *::before, *::after{ box-sizing: border-box; }
-html{ scroll-behavior: smooth; }
+html{ scroll-behavior: smooth; overflow-x: hidden; }
 body{
   margin: 0;
   background: var(--grad-bg);
@@ -191,22 +191,71 @@ section{ position: relative; z-index: 1; }
   color: var(--gray-dark);
 }
 
-.nav-toggle{ display:none; }
+/* Hide hamburger on desktop */
+.nav-toggle {
+  display: none;
+}
 
-/* Mobile Nav */
+/* MOBILE ONLY */
 @media (max-width: 860px){
-  .nav-links{ display:none; }
-  .nav-toggle{
-    display:flex; align-items:center; justify-content:center;
-    width:44px; height:44px; border-radius:50%;
-    border:3px solid var(--purple-1); background: var(--purple-4);
+
+  /* Hide desktop nav */
+  .nav-links {
+    display: none;
   }
+
+  /* Show hamburger */
+  .nav-toggle {
+    display: flex;
+    width: 44px;
+    height: 44px;
+    background: transparent;
+    border: none;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  /* Hamburger icon */
+  .menu-icon {
+    width: 24px;
+    height: 3px;
+    background: var(--white);
+    position: relative;
+    border-radius: 2px;
+  }
+
+  .menu-icon::before,
+  .menu-icon::after {
+    content: "";
+    width: 24px;
+    height: 3px;
+    background: var(--white);
+    position: absolute;
+    left: 0;
+    border-radius: 2px;
+  }
+
+  .menu-icon::before {
+    top: -8px;
+  }
+
+  .menu-icon::after {
+    top: 8px;
+  }
+
+  /* Mobile nav dropdown */
   .nav-links.open{
-    display:flex; flex-direction:column;
-    position:absolute; top: 76px; left:24px; right:24px;
+    display:flex;
+    flex-direction:column;
+    position:absolute;
+    top: 76px;
+    left:24px;
+    right:24px;
     background: var(--grad-card);
     border:3px solid var(--purple-1);
-    border-radius: var(--radius-md); padding: 10px;
+    border-radius: var(--radius-md);
+    padding: 10px;
     box-shadow: 5px 5px 0 var(--purple-2);
     z-index: 60;
   }
@@ -412,7 +461,7 @@ section{ position: relative; z-index: 1; }
 }
 
 /* ===========================================================
-   BRAND ICONS
+   BRAND ICONS (continued)
 =========================================================== */
 .brand-icon { object-fit: contain; display: inline-block; vertical-align: middle; }
 
@@ -420,7 +469,6 @@ section{ position: relative; z-index: 1; }
 .hero-art .brand-icon { width: 120px; height: 120px; }
 .about-hero .brand-icon { width: 100px; height: 100px; }
 .footer-brand .brand-icon { width: 50px; height: 50px; }
-
 
 /* ===================== FOOTER ===================== */
 .site-footer{
@@ -486,9 +534,8 @@ section{ position: relative; z-index: 1; }
 }
 
 /* ===========================================================
-last code added
+   CONTACT FORM
 =========================================================== */
-
 .form-card {
   max-width: 600px;
   margin: 0 auto;
@@ -512,8 +559,9 @@ last code added
   height: 150px;
   resize: none;
 }
+
 /* ===========================================================
-sticker gallery 
+   STICKER GALLERY (FINAL FIXED VERSION)
 =========================================================== */
 .sticker-gallery {
   width: 100%;
@@ -527,10 +575,12 @@ sticker gallery
   width: 100%;
   overflow: hidden;
   transition: transform 0.4s ease-in-out;
+  touch-action: none;
 }
 
 .sticker-slide {
   min-width: 100%;
+  flex-shrink: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -549,5 +599,3 @@ sticker gallery
   justify-content: center;
   gap: 10px;
 }
-
-

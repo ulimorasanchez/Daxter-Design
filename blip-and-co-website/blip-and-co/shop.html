@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Daxter Design — Sticker Shop</title>
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daxter Design — Sticker Shop</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
@@ -12,7 +12,8 @@
   <div class="container">
     <nav class="nav-pill">
       <a href="index.html" class="brand">
-        <img src="img/daxterlogo.jpg" class="brand-icon"> Daxter Design
+        <img src="img/daxterlogo.jpg" class="brand-icon" alt="Daxter Design logo">
+        <span>Daxter Design</span>
       </a>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
@@ -22,13 +23,12 @@
         <li><a href="contact.html">Contact</a></li>
         <li><a href="support.html">Support</a></li>
       </ul>
-      <button class="nav-toggle"></button>
+      <button class="nav-toggle" aria-label="Menu"></button>
     </nav>
   </div>
 </header>
 
 <main>
-
   <section class="page-hero">
     <h1>Sticker Shop</h1>
     <p>Real sticker photos from Daxter Design — each one links directly to Etsy.</p>
@@ -39,24 +39,21 @@
       <div class="section-head">
         <h2>All Stickers</h2>
       </div>
-
       <div class="grid-4" id="stickerGrid"></div>
     </div>
   </section>
-
 </main>
 
 <footer class="site-footer" id="footer"></footer>
 
+<script src="js/shared.js"></script>
 <script src="js/data.js"></script>
 <script src="js/main.js"></script>
 <script src="js/footer.js"></script>
-
 <script>
-  const grid = document.getElementById("stickerGrid");
-
-  DEFAULT_STICKERS.forEach(s => {
-    grid.innerHTML += `
+  const stickerGrid = document.getElementById("stickerGrid");
+  window.DEFAULT_STICKERS.forEach(s => {
+    stickerGrid.innerHTML += `
       <div class="sticker-card shop-card">
         <div class="sticker-thumb">
           <img src="${s.img}" alt="${s.name}">

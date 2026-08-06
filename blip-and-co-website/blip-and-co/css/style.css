@@ -1,12 +1,8 @@
 /* ===========================================================
-   DAXTER DESIGN — Smooth Purple Gradient Theme (Safe Clean)
+   GLOBAL THEME & RESET
 =========================================================== */
-
 @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800;900&family=Space+Mono:wght@400;700&display=swap');
 
-/* ===========================================================
-   GLOBAL RESET
-=========================================================== */
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; overflow-x: hidden; }
 body {
@@ -29,6 +25,8 @@ body {
   --white: #FFFFFF;
   --gray-soft: #CFC6E8;
   --gray-dark: #1E1A29;
+
+  --mint: #3DDC97;
 
   --radius-lg: 28px;
   --radius-md: 20px;
@@ -94,7 +92,6 @@ body {
   object-fit: contain;
 }
 
-/* Desktop nav */
 .nav-links {
   display: flex;
   flex-direction: row;
@@ -114,14 +111,13 @@ body {
   color: var(--gray-dark);
 }
 
-/* Hide hamburger on desktop */
+/* ===========================================================
+   MOBILE NAVIGATION
+=========================================================== */
 .nav-toggle {
   display: none;
 }
 
-/* ===========================================================
-   MOBILE NAVIGATION
-=========================================================== */
 @media (max-width: 768px) {
 
   .nav-toggle {
@@ -171,7 +167,26 @@ body {
 }
 
 /* ===========================================================
-   HERO
+   PAGE HERO (Videos, Shop, About, Contact, Support)
+=========================================================== */
+.page-hero {
+  text-align: center;
+  padding: 60px 20px 40px;
+}
+
+.page-hero h1 {
+  font-family: var(--font-display);
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.page-hero p {
+  font-size: 18px;
+  color: var(--gray-soft);
+}
+
+/* ===========================================================
+   HOME HERO
 =========================================================== */
 .hero {
   padding: 64px 0 40px;
@@ -221,6 +236,16 @@ body {
   background: var(--grad-button);
   color: var(--white);
   box-shadow: 4px 4px 0 rgba(0,0,0,0.25);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.btn:hover {
+  transform: translate(-2px,-3px) rotate(-1deg);
+  box-shadow: 6px 7px 0 rgba(0,0,0,0.35);
+}
+
+.btn-primary {
+  background: var(--grad-button);
 }
 
 .btn-ghost {
@@ -244,7 +269,7 @@ body {
 }
 
 /* ===========================================================
-   VIDEO CARD
+   VIDEO CARDS
 =========================================================== */
 .video-card {
   background: var(--grad-card);
@@ -252,6 +277,11 @@ body {
   border-radius: var(--radius-md);
   padding: 16px;
   margin-bottom: 30px;
+  transition: transform .3s ease;
+}
+
+.video-card:hover {
+  transform: translateY(-6px);
 }
 
 .video-card .thumb {
@@ -266,6 +296,11 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform .35s ease;
+}
+
+.video-card:hover .thumb img {
+  transform: scale(1.06);
 }
 
 .video-card h3 {
@@ -280,7 +315,24 @@ body {
 }
 
 /* ===========================================================
-   STICKER GALLERY
+   GRID LAYOUTS
+=========================================================== */
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 24px;
+}
+
+@media (max-width: 980px) {
+  .grid-4 { grid-template-columns: repeat(2,1fr); }
+}
+
+@media (max-width: 600px) {
+  .grid-4 { grid-template-columns: 1fr; }
+}
+
+/* ===========================================================
+   STICKER GALLERY (Home Page)
 =========================================================== */
 .sticker-gallery {
   width: 100%;
@@ -315,6 +367,121 @@ body {
   display: flex;
   justify-content: center;
   gap: 10px;
+}
+
+/* ===========================================================
+   STICKER CARDS (Shop Page)
+=========================================================== */
+.sticker-card {
+  background: var(--grad-card);
+  border: 3px solid var(--purple-1);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  transition: transform .3s ease;
+}
+
+.sticker-card:hover {
+  transform: translateY(-6px);
+}
+
+.shop-card {
+  text-align: center;
+}
+
+.sticker-thumb {
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background: var(--purple-4);
+  border: 2px solid var(--purple-1);
+  aspect-ratio: 1/1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* ===========================================================
+   ABOUT PAGE
+=========================================================== */
+.about-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.blob-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wobble {
+  animation: wobble 3s ease-in-out infinite;
+}
+
+@keyframes wobble {
+  0%,100% { transform: rotate(-2deg); }
+  50% { transform: rotate(2deg); }
+}
+
+/* ===========================================================
+   SUPPORT PAGE CHECKLIST
+=========================================================== */
+.checklist {
+  list-style: none;
+  padding-left: 0;
+  margin: 20px 0;
+}
+
+.checklist li {
+  margin-bottom: 10px;
+  padding-left: 24px;
+  position: relative;
+  font-size: 16px;
+}
+
+.checklist li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--mint);
+  font-weight: 700;
+}
+
+/* ===========================================================
+   CONTACT FORM
+=========================================================== */
+.form-card {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #ffffff10;
+  padding: 32px;
+  border-radius: 16px;
+  backdrop-filter: blur(6px);
+}
+
+.input-field,
+.textarea-field {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #c7d2fe;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.textarea-field {
+  height: 150px;
+  resize: none;
 }
 
 /* ===========================================================
@@ -372,31 +539,4 @@ body {
   display: flex;
   justify-content: center;
   gap: 18px;
-}
-
-/* ===========================================================
-   CONTACT FORM
-=========================================================== */
-.form-card {
-  max-width: 600px;
-  margin: 0 auto;
-  background: #ffffff10;
-  padding: 32px;
-  border-radius: 16px;
-  backdrop-filter: blur(6px);
-}
-
-.input-field,
-.textarea-field {
-  width: 100%;
-  padding: 12px;
-  border-radius: 10px;
-  border: 1px solid #c7d2fe;
-  margin-bottom: 15px;
-  font-size: 16px;
-}
-
-.textarea-field {
-  height: 150px;
-  resize: none;
 }

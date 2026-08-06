@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact Daxter Design</title>
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Daxter Design</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
 
 <header class="site-header">
   <div class="container">
     <nav class="nav-pill">
       <a href="index.html" class="brand">
-        <img src="img/daxterlogo.jpg" class="brand-icon"> Daxter Design
+        <img src="img/daxterlogo.jpg" class="brand-icon" alt="Daxter Design logo">
+        <span>Daxter Design</span>
       </a>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
@@ -23,13 +23,12 @@
         <li><a href="contact.html" class="active">Contact</a></li>
         <li><a href="support.html">Support</a></li>
       </ul>
-      <button class="nav-toggle"></button>
+      <button class="nav-toggle" aria-label="Menu"></button>
     </nav>
   </div>
 </header>
 
 <main>
-
   <section class="page-hero">
     <h1>Contact Daxter Design</h1>
     <p>Have a question, request, or just want to say hi? Send me a message.</p>
@@ -38,34 +37,30 @@
   <section>
     <div class="container">
       <div class="form-card">
-
         <form action="https://formsubmit.co/info@daxterdesigns.com" method="POST">
-
           <input type="hidden" name="_captcha" value="false">
 
-          <label>Name</label>
-          <input type="text" name="name" required class="input-field">
+          <label for="name">Name</label>
+          <input id="name" type="text" name="name" required class="input-field">
 
-          <label>Email</label>
-          <input type="email" name="email" required class="input-field">
+          <label for="email">Email</label>
+          <input id="email" type="email" name="email" required class="input-field">
 
-          <label>Message</label>
-          <textarea name="message" required class="textarea-field"></textarea>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required class="textarea-field"></textarea>
 
           <button type="submit" class="btn btn-primary" style="margin-top: 12px;">
             Send Message
           </button>
-
         </form>
-
       </div>
     </div>
   </section>
-
 </main>
 
 <footer class="site-footer" id="footer"></footer>
 
+<script src="js/shared.js"></script>
 <script src="js/footer.js"></script>
 
 </body>

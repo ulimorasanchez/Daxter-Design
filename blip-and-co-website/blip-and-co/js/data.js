@@ -157,7 +157,7 @@ const UPDATES = [
    Anything an admin adds/edits/deletes in admin.html is layered on top
    of these by js/store.js — this file itself never changes from the
    dashboard, so it always stays a safe fallback. */
-window.DEFAULT_VIDEOS = VIDEOS;
+window.DEFAULT_VIDEOS = DEFAULT_VIDEOS;
 window.DEFAULT_STICKERS = STICKERS;
 window.DEFAULT_BUNDLES = BUNDLES;
 window.DEFAULT_UPDATES = UPDATES;

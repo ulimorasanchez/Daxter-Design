@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Daxter Design — Videos</title>
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daxter Design — Videos</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
@@ -12,17 +12,18 @@
   <div class="container">
     <nav class="nav-pill">
       <a href="index.html" class="brand">
-        <img src="img/daxterlogo.jpg" class="brand-icon"> Daxter Design
+        <img src="img/daxterlogo.jpg" class="brand-icon" alt="Daxter Design logo">
+        <span>Daxter Design</span>
       </a>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="videos.html" class="active">Videos</a></li>
         <li><a href="shop.html">Sticker Shop</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">contact</a></li>
+        <li><a href="contact.html">Contact</a></li>
         <li><a href="support.html">Support</a></li>
       </ul>
-      <button class="nav-toggle"></button>
+      <button class="nav-toggle" aria-label="Menu"></button>
     </nav>
   </div>
 </header>
@@ -40,20 +41,18 @@
 
 <footer class="site-footer" id="footer"></footer>
 
+<script src="js/shared.js"></script>
 <script src="js/data.js"></script>
 <script src="js/main.js"></script>
 <script src="js/footer.js"></script>
-
 <script>
-  const grid = document.getElementById("videoGrid");
-
-  DEFAULT_VIDEOS.forEach(v => {
-    grid.innerHTML += `
+  const videoGrid = document.getElementById("videoGrid");
+  window.DEFAULT_VIDEOS.forEach(v => {
+    videoGrid.innerHTML += `
       <div class="video-card">
         <div class="thumb">
-  <img src="${v.thumb}" alt="${v.title}">
-</div>
-
+          <img src="${v.thumb}" alt="${v.title}">
+        </div>
         <h3>${v.title}</h3>
         <p class="desc">${v.description}</p>
         <div class="video-meta">

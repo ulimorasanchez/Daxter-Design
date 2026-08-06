@@ -102,6 +102,35 @@ if (featured.length > 0) {
 }
 </script>
 
+  <script>
+  const stickerGallery = document.getElementById("featuredStickerGallery");
+  const stickers = window.DEFAULT_STICKERS;
+  let currentSticker = 0;
+
+  function showSticker() {
+    const s = stickers[currentSticker];
+
+    // Clear previous sticker
+    stickerGallery.innerHTML = "";
+
+    // Create new sticker element
+    const img = document.createElement("img");
+    img.src = s.img;
+    img.alt = s.name;
+
+    stickerGallery.appendChild(img);
+
+    // Move to next sticker
+    currentSticker = (currentSticker + 1) % stickers.length;
+  }
+
+  // Show first sticker immediately
+  showSticker();
+
+  // Change sticker every 4 seconds
+  setInterval(showSticker, 4000);
+</script>
+
 
 </body>
 </html>

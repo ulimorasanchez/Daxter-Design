@@ -2,9 +2,105 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <title>Daxter Design — Art & Animation</title>
 <link rel="stylesheet" href="css/style.css">
+<style>
+
+/* Prevent blank spaces */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Mobile hamburger menu */
+.nav-toggle {
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.menu-icon {
+  width: 24px;
+  height: 2px;
+  background: #fff;
+  position: relative;
+}
+
+.menu-icon::before,
+.menu-icon::after {
+  content: "";
+  width: 24px;
+  height: 2px;
+  background: #fff;
+  position: absolute;
+  left: 0;
+}
+
+.menu-icon::before {
+  top: -8px;
+}
+
+.menu-icon::after {
+  top: 8px;
+}
+
+/* Mobile nav open/close */
+.nav-links {
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.nav-links.open {
+  display: flex;
+}
+
+/* Sticker gallery */
+.sticker-gallery {
+  width: 100%;
+  max-width: 240px;
+  margin: 30px auto;
+  text-align: center;
+}
+
+.sticker-slider {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  transition: transform 0.4s ease-in-out;
+  touch-action: none;
+}
+
+.sticker-slide {
+  min-width: 100%;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sticker-slide img {
+  width: 200px;
+  height: auto;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.sticker-controls {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+</style>
 </head>
 <body>
 
@@ -14,6 +110,7 @@
       <a href="index.html" class="brand">
         <img src="img/daxterlogo.jpg" class="brand-icon"> Daxter Design
       </a>
+
       <ul class="nav-links">
         <li><a href="index.html" class="active">Home</a></li>
         <li><a href="videos.html">Videos</a></li>
@@ -22,7 +119,10 @@
         <li><a href="contact.html">Contact</a></li>
         <li><a href="support.html">Support</a></li>
       </ul>
-      <button class="nav-toggle"></button>
+
+      <button class="nav-toggle">
+        <span class="menu-icon"></span>
+      </button>
     </nav>
   </div>
 </header>
@@ -50,7 +150,7 @@
       <div class="section-head"><h2>Featured Video</h2></div>
       <div id="featuredVideo"></div>
 
-      <!-- ⭐ BEST SELLER STICKERS SECTION -->
+      <!-- ⭐ BEST SELLER STICKERS -->
       <div class="section-head"><h2>Best Seller Stickers</h2></div>
 
       <div class="sticker-gallery">
@@ -93,7 +193,6 @@
           <button id="nextSticker" class="btn btn-sm btn-primary">Next</button>
         </div>
       </div>
-      <!-- END STICKER SECTION -->
 
     </div>
   </section>
@@ -106,6 +205,7 @@
 <script src="js/main.js"></script>
 <script src="js/footer.js"></script>
 
+<!-- Featured Video -->
 <script>
   const featured = DEFAULT_VIDEOS.find(v => v.featured);
   if (featured) {
@@ -114,7 +214,6 @@
         <div class="thumb">
           <img src="${featured.thumb}" alt="${featured.title}">
         </div>
-
         <h3>${featured.title}</h3>
         <p class="desc">${featured.description}</p>
         <div class="video-meta">
@@ -124,7 +223,17 @@
   }
 </script>
 
-<!-- ⭐ STICKER SLIDER LOGIC -->
+<!-- Mobile Menu Toggle -->
+<script>
+  const navToggle = document.querySelector('.nav-toggle');
+  const navLinks = document.querySelector('.nav-links');
+
+  navToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+  });
+</script>
+
+<!-- Sticker Slider -->
 <script>
   const slider = document.querySelector('.sticker-slider');
   const slides = document.querySelectorAll('.sticker-slide');
@@ -134,12 +243,17 @@
   let currentIndex = 0;
   let autoTimer = null;
 
+  function fixSliderWidth() {
+    slides.forEach(slide => {
+      slide.style.width = slider.offsetWidth + "px";
+    });
+  }
+
   function showSlide(index) {
     if (index < 0) index = slides.length - 1;
     if (index >= slides.length) index = 0;
-
     currentIndex = index;
-    slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+    slider.style.transform = `translateX(-${currentIndex * slider.offsetWidth}px)`;
   }
 
   function nextSlide() {
@@ -152,7 +266,7 @@
 
   function startAutoSlide() {
     clearInterval(autoTimer);
-    autoTimer = setInterval(nextSlide, 4000); // 4 seconds
+    autoTimer = setInterval(nextSlide, 4000);
   }
 
   nextBtn.addEventListener('click', () => {
@@ -165,6 +279,9 @@
     startAutoSlide();
   });
 
+  window.addEventListener('resize', fixSliderWidth);
+
+  fixSliderWidth();
   showSlide(0);
   startAutoSlide();
 </script>

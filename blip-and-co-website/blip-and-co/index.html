@@ -84,22 +84,22 @@
 </script>
 
   <script>
-  const featured = window.DEFAULT_VIDEOS.filter(v => v.featured);
-  const featuredVideo = document.getElementById("featuredVideo");
+    const featured = window.DEFAULT_VIDEOS.filter(v => v.featured);
+const featuredVideo = document.getElementById("featuredVideo");
 
-  if (featured.length > 0) {
-    const v = featured[0];
-    featuredVideo.innerHTML = `
-      <div class="video-card">
-        <div class="thumb">
-          <img src="${v.thumb}" alt="${v.title}">
-        </div>
-        <h3>${v.title}</h3>
-        <p class="desc">${v.description}</p>
-        <a href="${v.url}" target="_blank" class="btn btn-primary">Watch</a>
+if (featured.length > 0) {
+  const v = featured[0];
+  featuredVideo.innerHTML = `
+    <div class="video-card">
+      <div class="thumb">
+        <img src="${v.thumb}" alt="${v.title}">
       </div>
-    `;
-  }
+      <h3>${v.title}</h3>
+      <p class="desc">${v.description}</p>
+      <a href="${v.url}" target="_blank" class="btn btn-primary">Watch</a>
+    </div>
+  `;
+}
 </script>
 
 

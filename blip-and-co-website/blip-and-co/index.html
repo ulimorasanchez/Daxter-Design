@@ -113,30 +113,60 @@ if (featured.length > 0) {
   const stickerGallery = document.getElementById("featuredStickerGallery");
   const stickers = window.DEFAULT_STICKERS;
   let currentSticker = 0;
+  let autoRotate;
 
-  function showSticker() {
-    const s = stickers[currentSticker];
+  function renderSticker(index) {
+    const s = stickers[index];
 
-    // Clear previous sticker
     stickerGallery.innerHTML = "";
 
-    // Create new sticker element
     const img = document.createElement("img");
     img.src = s.img;
     img.alt = s.name;
 
-    stickerGallery.appendChild(img);
+    // Click → open Etsy
+    img.onclick = () => window.open(s.etsy, "_blank");
 
-    // Move to next sticker
-    currentSticker = (currentSticker + 1) % stickers.length;
+    stickerGallery.appendChild(img);
   }
 
-  // Show first sticker immediately
-  showSticker();
+  function nextSticker() {
+    currentSticker = (currentSticker + 1) % stickers.length;
+    renderSticker(currentSticker);
+  }
 
-  // Change sticker every 4 seconds
-  setInterval(showSticker, 4000);
+  function prevSticker() {
+    currentSticker = (currentSticker - 1 + stickers.length) % stickers.length;
+    renderSticker(currentSticker);
+  }
+
+  // Auto rotate every 4 seconds
+  function startAutoRotate() {
+    autoRotate = setInterval(nextSticker, 4000);
+  }
+
+  function stopAutoRotate() {
+    clearInterval(autoRotate);
+  }
+
+  // Buttons
+  document.getElementById("nextFeaturedSticker").onclick = () => {
+    stopAutoRotate();
+    nextSticker();
+    startAutoRotate();
+  };
+
+  document.getElementById("prevFeaturedSticker").onclick = () => {
+    stopAutoRotate();
+    prevSticker();
+    startAutoRotate();
+  };
+
+  // Start
+  renderSticker(currentSticker);
+  startAutoRotate();
 </script>
+
 
 
 </body>
